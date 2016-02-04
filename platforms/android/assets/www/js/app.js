@@ -29,10 +29,17 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'views/appComponents/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'views/appComponents/menu.html'
   })
-
+  .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/appComponents/login.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
   .state('app.search', {
     url: '/search',
     views: {
@@ -70,5 +77,5 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/login');
 });
