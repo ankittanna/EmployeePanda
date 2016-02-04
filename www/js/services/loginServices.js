@@ -1,41 +1,28 @@
 function employeePandaServices($http) {
     'use strict';
-    var vendorList = {};
-    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';   
-    
+    var userObject = {};
+    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
-    function loginUser(userData) {
-        var loginUrl = '';
-        if(userData.role == 'Employee'){
-            loginUrl = baseUrl + '/loginEmployee';
-        }else {
-            loginUrl = baseUrl + '/loginVendor';
-        }
-        
-        delete userData.role;
-       
+    function loginUser(userData) {     
         return $http({
             method: 'POST',
-            url: loginUrl,
+            url: baseUrl + '/login',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: userData
         }).then(function(response) {
             console.log(response.data) ;  
-            vendorList = response.data;        
+            userObject = response.data[0];        
             return response.data;
         });     
         
     }
     
-    function signupUser(userData) {
-        var signupUrl = '';
-        signupUrl = baseUrl + '/employee';
-        
+    function signupUser(userData) {      
         return $http({
             method: 'POST',
-            url: signupUrl,
+            url: baseUrl + '/employee',
             headers:{
                 'Content-Type': 'application/json'
             },
@@ -49,7 +36,7 @@ function employeePandaServices($http) {
     // Object Map of functions
     return {
         loginUser: loginUser,
-        vendorList: vendorList,
+        userObject:userObject,
         signupUser: signupUser
 
     };
