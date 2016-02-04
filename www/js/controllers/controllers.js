@@ -1,4 +1,4 @@
-angular.module('EmployeePanda.controllers', [])
+angular.module('EmployeePanda.controllers')
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
