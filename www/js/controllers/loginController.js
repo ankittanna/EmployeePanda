@@ -17,16 +17,4 @@ angular.module('EmployeePanda.controllers', [])
         $state.go('app.signup');
     };
   
-})
-.controller('SignupCtrl', function($scope, EPS, $state, $ionicPopup) {
-    $scope.submitted = false;
-    
-    this.submitSignupForm = function(isFormValid){
-        $scope.submitted = true;
-        
-        if(isFormValid)
-        {
-            alert('Our Form is Valid');
-        }
-    };
 });
