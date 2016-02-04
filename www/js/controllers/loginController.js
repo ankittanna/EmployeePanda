@@ -7,7 +7,7 @@ angular.module('EmployeePanda.controllers', [])
             $state.go('tab.dash');
         }).catch(function(response) {
             var alertPopup = $ionicPopup.alert({
-                title: 'Login failed!',
+                title: 'Login Error!',
                 template: 'Please check your credentials!'
             });
         });
