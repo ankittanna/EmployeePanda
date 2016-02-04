@@ -28,11 +28,30 @@ function employeePandaServices($http) {
         });     
         
     }
+    
+    function signupUser(userData) {
+        var signupUrl = '';
+        signupUrl = baseUrl + '/employee';
+        
+        return $http({
+            method: 'POST',
+            url: signupUrl,
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            data: userData
+        }).then(function(response) {
+            console.log(response.data);          
+            return response.data;
+        });
+    }
         
     // Object Map of functions
     return {
         loginUser: loginUser,
-        vendorList: vendorList
+        vendorList: vendorList,
+        signupUser: signupUser
+
     };
 }
 

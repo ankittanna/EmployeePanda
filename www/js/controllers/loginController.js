@@ -1,6 +1,6 @@
 angular.module('EmployeePanda.controllers', [])
 .controller('LoginCtrl', function($scope, EPS, $state, $ionicPopup) {
-    $scope.data= {};
+    $scope.data = {};
     this.login = function() {
         EPS.loginUser($scope.data).then(function(data) {
             $state.go('app.vendorlist');
@@ -10,6 +10,11 @@ angular.module('EmployeePanda.controllers', [])
                 template: 'Please check your credentials!'
             });
         });
+    };
+    
+    this.signup = function(){
+        console.log("Does this come here!!");
+        $state.go('app.signup');
     };
   
 });
