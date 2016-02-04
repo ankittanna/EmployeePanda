@@ -41,6 +41,16 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
         }
       }
     })
+   .state('app.signup', {
+      url: '/signup',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/appComponents/signup.html',
+          controller: 'SignupCtrl',
+          controllerAs: 'signup'
+        }
+      }
+    })
   .state('app.search', {
     url: '/search',
     views: {
