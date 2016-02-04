@@ -1,20 +1,24 @@
-angular.module('EmployeePanda.employeeServices', [])
-.factory('EmployeeFactory', function() {
+function employeeServices($http) {
+    'use strict';
+    
+    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
+    function getVendorList() {
+        var url = baseUrl + '/vendors';
+        return $http.get(url).then(function(response) {
+            return response.data;
+        });
+        
     }
-  };
-});
+        
+    // Object Map of functions
+    return {
+        getVendorList: getVendorList,
+
+    };
+}
+
+angular.module('EmployeePanda.services')
+.factory('EmployeeService', employeeServices);
+
+employeeServices.$inject = ['$http'];

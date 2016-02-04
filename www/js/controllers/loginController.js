@@ -3,7 +3,7 @@ angular.module('EmployeePanda.controllers', [])
     $scope.data= {};
     this.login = function() {
         EPS.loginUser($scope.data).then(function(data) {
-            $state.go('tab.dash');
+            $state.go('app.vendorlist');
         }).catch(function(response) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login Error!',

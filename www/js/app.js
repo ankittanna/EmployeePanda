@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'EmployeePanda.services' is found in services.js
 // 'EmployeePanda.controllers' is found in controllers.js
-angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.vendorServices', 'EmployeePanda.employeeServices'])
+angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -41,11 +41,13 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
         }
       }
     })
-  .state('app.search', {
-    url: '/search',
+  .state('app.vendorlist', {
+    url: '/vendorlist',
     views: {
       'menuContent': {
-        templateUrl: 'views/employee/search.html'
+        templateUrl: 'views/employee/vendorlist.html',
+        controller: 'EmployeeCtrl',
+        controllerAs: 'employee'
       }
     }
   })

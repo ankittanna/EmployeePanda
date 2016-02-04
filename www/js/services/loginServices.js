@@ -1,6 +1,7 @@
 function employeePandaServices($http) {
     'use strict';
-    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';
+    var vendorList = {};
+    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';   
     
 
     function loginUser(userData) {
@@ -21,7 +22,8 @@ function employeePandaServices($http) {
             },
             data: userData
         }).then(function(response) {
-            console.log(response.data) ;          
+            console.log(response.data) ;  
+            vendorList = response.data;        
             return response.data;
         });     
         
@@ -30,7 +32,7 @@ function employeePandaServices($http) {
     // Object Map of functions
     return {
         loginUser: loginUser,
-       
+        vendorList: vendorList
     };
 }
 

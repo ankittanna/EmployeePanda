@@ -1,0 +1,11 @@
+<ion-view view-title="Vendors">
+  <ion-content>
+    <input type="text" placeholder="Search" ng-model="searchStr">
+    <h1 class="title">Restaurants</h1>
+    <ion-list>
+      <ion-item ng-repeat="vendor in vendors" href="#/app/vendors/{{vendor.id}}">
+        {{vendor.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
