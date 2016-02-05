@@ -6,11 +6,15 @@ angular.module('EmployeePanda.controllers')
      this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get('selectedVendorObject');
 	
 	 this.decreaseCounter = function(counterId){
-	 	alert(angular.element('#counter'+counterId).val());
+	 	if(parseInt(angular.element('#counter'+counterId).val())>0){
+	 		angular.element('#counter'+counterId).val(parseInt(angular.element('#counter'+counterId).val()) -1);
+	 	}
 	 };
 
 	 this.increaseCounter = function(counterId){
-
+	 	if(parseInt(angular.element('#counter'+counterId).val())<50){
+	 		angular.element('#counter'+counterId).val(parseInt(angular.element('#counter'+counterId).val()) +1);
+	 	}
 	 };
 
 });
