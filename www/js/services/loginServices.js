@@ -1,7 +1,6 @@
-function employeePandaServices($http) {
+function employeePandaServices($http,DetailsService) {
     'use strict';
-    var userObject = {};
-    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
+     var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
     function loginUser(userData) {     
         return $http({
@@ -13,7 +12,7 @@ function employeePandaServices($http) {
             data: userData
         }).then(function(response) {
             console.log(response.data) ;  
-            userObject = response.data[0];        
+            DetailsService.loginInfo.userInfo.set(response.data[0]);             
             return response.data;
         });     
         
@@ -35,8 +34,7 @@ function employeePandaServices($http) {
         
     // Object Map of functions
     return {
-        loginUser: loginUser,
-        userObject:userObject,
+        loginUser: loginUser,        
         signupUser: signupUser
 
     };
@@ -45,4 +43,4 @@ function employeePandaServices($http) {
 angular.module('EmployeePanda.services',[])
     .factory('EPS', employeePandaServices);
 
-employeePandaServices.$inject = ['$http'];
+employeePandaServices.$inject = ['$http','DetailsService'];

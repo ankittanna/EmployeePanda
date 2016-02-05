@@ -1,10 +1,11 @@
-function vendorServices($http) {
+function vendorServices($http,DetailsService) {
     'use strict';
     
     var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
     function getOrders() {
-        var url = baseUrl + '/orders';
+        var userInfo = DetailsService.loginInfo.userInfo.get();
+        var url = baseUrl + '/vendors/getorders?orderto=' + userInfo.emailid;
         return $http.get(url).then(function(response) {
             return response.data;
         });
@@ -26,4 +27,4 @@ function vendorServices($http) {
 angular.module('EmployeePanda.services')
 .factory('VendorService', vendorServices);
 
-vendorServices.$inject = ['$http'];
+vendorServices.$inject = ['$http', 'DetailsService'];

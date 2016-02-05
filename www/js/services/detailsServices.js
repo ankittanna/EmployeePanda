@@ -15,8 +15,24 @@ angular.module('EmployeePanda.services')
     }
   };
   
+  
+   this.loginInfoStorage = {
+    userInfo:{
+      set: function(obj){
+        localStorageService.set('userInfoObject', obj);
+      },
+      get: function(){
+        return localStorageService.get('userInfoObject');
+      },
+      remove: function(){
+        localStorageService.set('userInfoObject');
+      }
+    }
+  };
+  
 
   return {
-    vendorInfo: this.vendorInfoStorage
+    vendorInfo: this.vendorInfoStorage,
+    loginInfo: this.loginInfoStorage
   };
 });
