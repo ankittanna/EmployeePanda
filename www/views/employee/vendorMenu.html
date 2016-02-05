@@ -2,14 +2,12 @@
   <ion-content>
     <div class="list">
         <label class="item item-input">
-            <input type="text" placeholder="Search Vendors" ng-model="vendorList.searchVendorStr">
+            <h1>Good Luck Cafe</h1>
         </label>
     </div>
-    <label class="item item-input">
-        <span class="input-label">
-            <h1 class="title">Restaurants</h1>
-        </span>
-    </label>
+    <div class="item item-image">
+        <!--<img src="img/rest1.jpg">-->
+    </div>
     <ion-list>
       <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor.id}}">
         <div class="row">

@@ -10,11 +10,16 @@ function vendorServices($http) {
         });
         
     }
+    
+    function getVendorInformation()
+    {
         
+    }
+
     // Object Map of functions
     return {
         getOrders: getOrders,
-
+        getVendorInformation: getVendorInformation
     };
 }
 

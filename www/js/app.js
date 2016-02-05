@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'EmployeePanda.services' is found in services.js
 // 'EmployeePanda.controllers' is found in controllers.js
-angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.directives'])
+angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.directives', 'LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

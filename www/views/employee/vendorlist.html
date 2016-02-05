@@ -11,7 +11,7 @@
         </span>
     </label>
     <ion-list>
-      <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor.id}}">
+      <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor._id}}" ng-click="vendorList.selectVendor(vendor)">
         <div class="row">
             <div class="col">{{vendor.name}}</div>
             <div class="col"></div>
