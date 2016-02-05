@@ -1,49 +1,24 @@
-angular.module('EmployeePanda.vendorServices', [])
-.factory('VendorFactory', function() {
-  // Might use a resource here that returns a JSON array
+function vendorServices($http) {
+    'use strict';
+    
+    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
-
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
+    function getOrders() {
+        var url = baseUrl + '/orders';
+        return $http.get(url).then(function(response) {
+            return response.data;
+        });
+        
     }
-  };
-});
+        
+    // Object Map of functions
+    return {
+        getOrders: getOrders,
+
+    };
+}
+
+angular.module('EmployeePanda.services')
+.factory('VendorService', vendorServices);
+
+vendorServices.$inject = ['$http'];

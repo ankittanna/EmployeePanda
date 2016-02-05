@@ -3,7 +3,13 @@ angular.module('EmployeePanda.controllers', [])
     $scope.data = {};
     this.login = function() {
         EPS.loginUser($scope.data).then(function(data) {
-            $state.go('app.vendorlist');
+            if(data[0].role === 'Employee') {
+                $state.go('app.vendorlist');
+            }
+            else{
+                $state.go('app.vendorhome');
+            }
+            
         }).catch(function(response) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login Error!',
