@@ -1,0 +1,36 @@
+<ion-view view-title="Vendors">
+  <ion-content>
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" placeholder="Search Vendors" ng-model="vendorList.searchVendorStr">
+        </label>
+    </div>
+    <label class="item item-input">
+        <span class="input-label">
+            <h1 class="title">Restaurants</h1>
+        </span>
+    </label>
+    <ion-list>
+      <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor.id}}">
+        <div class="row">
+            <div class="col">{{vendor.name}}</div>
+            <div class="col"></div>
+            <div class="col">
+                <a class="item-icon-right" href="#">
+                    <i class="icon ion-heart"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-controller="RatingController as rating" class="container">
+                <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+            </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    
+
+ <!-- <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div> -->
+ 
+  </ion-content>
+</ion-view>
