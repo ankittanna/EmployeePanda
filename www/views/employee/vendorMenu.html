@@ -2,21 +2,60 @@
   <ion-content>
     <div class="list">
         <label class="item item-input">
-            <h1>Good Luck Cafe</h1>
+            <div class="row">
+                <div class="col">
+                    <h1>{{vendorMenu.vendorInfo.name}}</h1>
+                    <label>
+                        <div class="row">
+                            <div ng-controller="RatingController as rating" class="container">
+                                <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                    <a class="item-icon-right" href="#">
+                        <i class="icon ion-heart"></i>
+                    </a>
+                </div>
+            </div>
         </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="vendorMenu.searchMenuKey">
+      </label>
     </div>
     <div class="item item-image">
         <!--<img src="img/rest1.jpg">-->
     </div>
+    <div class="button-bar">
+      <a class="button button-balanced">Veg</a>
+      <a class="button button-assertive">Non-Veg</a>
+    </div>
     <ion-list>
-      <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor.id}}">
+      <ion-item ng-repeat="menuItem in vendorMenu.vendorInfo.menu">
         <div class="row">
-            <div class="col">{{vendor.name}}</div>
-            <div class="col"></div>
+            <div class="col">{{menuItem.itemname}}</div>
+            <div class="col">Rs. {{menuItem.rate}}</div>
             <div class="col">
-                <a class="item-icon-right" href="#">
-                    <i class="icon ion-heart"></i>
-                </a>
+                <div class="row">
+                    <div class="col divContentCenter">
+                        <button class="button">
+                          <i class="icon ion-minus-round" ng-click="vendorMenu.decreaseCounter($index)"></i>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <input ng-model="counter" id="counter{{$index}}" type="number" value="0" class="inputTypeNumber" min="0">
+                    </div>
+                    <div class="col divContentCenter">
+                        <button class="button">
+                          <i class="icon ion-plus-round" ng-click="vendorMenu.increaseCounter($index)"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">

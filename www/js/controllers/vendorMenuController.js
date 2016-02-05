@@ -5,7 +5,13 @@ angular.module('EmployeePanda.controllers')
      // Fetch Vendor Information
      this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get('selectedVendorObject');
 	
+	 var counterId = 'counter';
+	 this.decreaseCounter = function(counterId){
+	 	
+	 };
 
-    // this.getVendorInformation();
+	 this.increaseCounter = function(counterId){
+
+	 };
 
 });

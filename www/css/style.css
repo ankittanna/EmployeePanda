@@ -28,3 +28,19 @@
 }
 
 /* Rating Style */
+
+/* Input Type Number */
+.inputTypeNumber{
+  background: gainsboro;
+  text-align: center;
+}
+
+/* Generic */
+.divContentCenter
+{
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
