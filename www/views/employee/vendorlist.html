@@ -12,7 +12,15 @@
     </label>
     <ion-list>
       <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor.id}}">
-        {{vendor.name}}
+        <div class="row">
+            <div class="col">{{vendor.name}}</div>
+            <div class="col"></div>
+            <div class="col">
+                <a class="item-icon-right" href="#">
+                    <i class="icon ion-heart"></i>
+                </a>
+            </div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>

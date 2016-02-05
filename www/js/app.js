@@ -22,7 +22,11 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
     }
   });
 })
-
+.constant('ratingConfig', {
+    max: 5,
+    stateOn: null,
+    stateOff: null
+})
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
