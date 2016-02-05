@@ -4,7 +4,7 @@ angular.module('EmployeePanda.controllers')
         $scope.vendors = [];
  	
         this.selectVendor = function(vendorObject){
-        	console.log('This is the selected vendor ---> ' + JSON.stringify(vendorObject));
+        	DetailsService.vendorInfo.selectedVendor.set(vendorObject);
         };
 
         EmployeeService.getVendorList().then(function(data) {

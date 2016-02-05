@@ -3,14 +3,14 @@ angular.module('EmployeePanda.services')
   
   this.vendorInfoStorage = {
     selectedVendor:{
-      get: function(obj){
-        localStorageService.get('selectedVendorObject', obj);
-      },
-      set: function(){
+      set: function(obj){
         localStorageService.set('selectedVendorObject', obj);
+      },
+      get: function(){
+        return localStorageService.get('selectedVendorObject');
       },
       remove: function(){
-        localStorageService.set('selectedVendorObject', obj);
+        localStorageService.set('selectedVendorObject');
       }
     }
   };
