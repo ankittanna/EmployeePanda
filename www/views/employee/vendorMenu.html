@@ -43,16 +43,16 @@
             <div class="col">
                 <div class="row">
                     <div class="col divContentCenter">
-                        <button class="button">
-                          <i class="icon ion-minus-round" ng-click="vendorMenu.decreaseCounter($index)"></i>
+                        <button class="button" ng-click="vendorMenu.decreaseCounter($index)">
+                          <i class="icon ion-minus-round"></i>
                         </button>
                     </div>
                     <div class="col">
-                        <input ng-model="counter" id="counter{{$index}}" type="number" value="0" class="inputTypeNumber" min="0">
+                        <input id="counter{{$index}}" type="number" value="0" class="inputTypeNumber" min="0">
                     </div>
                     <div class="col divContentCenter">
-                        <button class="button">
-                          <i class="icon ion-plus-round" ng-click="vendorMenu.increaseCounter($index)"></i>
+                        <button class="button" ng-click="vendorMenu.increaseCounter($index)">
+                          <i class="icon ion-plus-round"></i>
                         </button>
                     </div>
                 </div>
