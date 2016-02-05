@@ -36,7 +36,7 @@
       <a class="button button-assertive">Non-Veg</a>
     </div>
     <ion-list>
-      <ion-item ng-repeat="menuItem in vendorMenu.vendorInfo.menu">
+      <ion-item ng-repeat="menuItem in vendorMenu.vendorInfo.menu | filter:vendorMenu.searchMenuKey">
         <div class="row">
             <div class="col">{{menuItem.itemname}}</div>
             <div class="col">Rs. {{menuItem.rate}}</div>
