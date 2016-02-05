@@ -21,7 +21,16 @@
                 </a>
             </div>
         </div>
+        <div class="row">
+            <div ng-controller="RatingController as rating" class="container">
+                <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+            </div>
+        </div>
       </ion-item>
     </ion-list>
+    
+
+ <!-- <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div> -->
+ 
   </ion-content>
 </ion-view>
