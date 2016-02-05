@@ -4,7 +4,7 @@ angular.module('EmployeePanda.controllers', [])
     this.login = function() {
         EPS.loginUser($scope.data).then(function(data) {
             if(data[0].role === 'Employee') {
-                $state.go('app.vendorlist');
+                $state.go('app.vendorList');
             }
             else{
                 $state.go('app.vendorhome');
