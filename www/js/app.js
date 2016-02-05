@@ -58,8 +58,8 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
     views: {
       'menuContent': {
         templateUrl: 'views/employee/vendorlist.html',
-        controller: 'EmployeeCtrl',
-        controllerAs: 'employee'
+        controller: 'VendorListController',
+        controllerAs: 'vendorList'
       }
     }
   })
