@@ -11,7 +11,7 @@
         </span>
     </label>
     <ion-list>
-      <ion-item ng-repeat="order in orders | filter: VendorCtrl.searchOrderStr" href="#/app/orders/{{order._id}}" ng-click="VendorCtrl.selectOrder(order)">
+      <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr" ng-click="vendor.selectOrder(order)">
         <div class="row">
             <div class="col">{{order.orderby}}</div>  
             <div class="col">Rs. {{order.total}}</div>         

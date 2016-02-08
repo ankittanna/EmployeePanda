@@ -3,7 +3,7 @@ angular.module('EmployeePanda.controllers')
      this.orderId = $stateParams.orderId;
      
      // Fetch Vendor Information
-     this.orderInfo = DetailsService.orderInfo.selectedVendor.get('selectedOrderObject');
+     this.orderInfo = DetailsService.orderInfo.selectedOrder.get('selectedOrderObject');
 	 
 	 // Explicit Menu List
 	 this.orderMenu = this.orderInfo.ordereditems;	 

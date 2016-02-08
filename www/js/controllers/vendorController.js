@@ -20,6 +20,7 @@ angular.module('EmployeePanda.controllers').controller('VendorCtrl', function($s
         
         this.selectOrder = function(orderObject){
         	DetailsService.orderInfo.selectedOrder.set(orderObject);
+            $state.go('app.orderedMenu');
         };
         
     
