@@ -45,3 +45,11 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+.checkoutBand
+{
+  background-color: gainsboro;
+}
+
+#ionicCheckoutBand.item {
+    background-color: gainsboro;
+}

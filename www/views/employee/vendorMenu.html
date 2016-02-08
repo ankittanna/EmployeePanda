@@ -36,7 +36,7 @@
       <a class="button button-assertive">Non-Veg</a>
     </div>
     <ion-list>
-      <ion-item ng-repeat="menuItem in vendorMenu.vendorInfo.menu | filter:vendorMenu.searchMenuKey">
+      <ion-item ng-repeat="menuItem in vendorMenu.vendorMenu | filter:vendorMenu.searchMenuKey track by $index">
         <div class="row">
             <div class="col">{{menuItem.itemname}}</div>
             <div class="col">Rs. {{menuItem.rate}}</div>
@@ -48,7 +48,13 @@
                         </button>
                     </div>
                     <div class="col">
-                        <input id="counter{{$index}}" type="number" value="0" class="inputTypeNumber" min="0">
+                        <input id="counter{{$index}}" 
+                        type="number" 
+                        value="0" 
+                        class="inputTypeNumber" 
+                        min="0" 
+                        ng-model="vendorMenu.vendorMenu[$index].quantity"
+                        ng-change="vendorMenu.updateOrderQuantity()">
                     </div>
                     <div class="col divContentCenter">
                         <button class="button" ng-click="vendorMenu.increaseCounter($index)">
@@ -60,16 +66,17 @@
         </div>
       </ion-item>
     </ion-list>
-    
-    <ion-footer-bar align-title="left" class="bar-assertive">
-      <div class="buttons">
-        <button class="button">Left Button</button>
-      </div>
-      <h1 class="title">Title!</h1>
-      <div class="buttons" ng-click="doSomething()">
-        <button class="button">Right Button</button>
-      </div>
-    </ion-footer-bar>
+    <ion-list>
+      <ion-item id="ionicCheckoutBand">
+          <div class="row checkoutBand">
+            <div class="col"><b>Total Value:</b></div>          
+            <div class="col">Rs. {{vendorMenu.orderCost}}</div>
+            <div class="col">
+                <button class="button button-dark">Checkout</button>
+            </div>
+          </div>
+      </ion-item>
+    </ion-list>
  <!-- <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div> -->
  
   </ion-content>
