@@ -32,11 +32,11 @@
         <!--<img src="img/rest1.jpg">-->
     </div>
     <div class="button-bar">
-      <a class="button button-balanced">Veg</a>
-      <a class="button button-assertive">Non-Veg</a>
+      <a class="button button-positive active" ng-click="vendorMenu.switchMenuCategory('Veg')">Veg</a>
+      <a class="button" ng-click="vendorMenu.switchMenuCategory('Non-Veg')">Non-Veg</a>
     </div>
     <ion-list>
-      <ion-item ng-repeat="menuItem in vendorMenu.vendorMenu | filter:vendorMenu.searchMenuKey track by $index">
+      <ion-item ng-repeat="menuItem in vendorMenu.vendorMenu | filter:vendorMenu.searchMenuKey | filter: vendorMenu.selectedCategory track by $index">
         <div class="row">
             <div class="col">{{menuItem.itemname}}</div>
             <div class="col">Rs. {{menuItem.rate}}</div>

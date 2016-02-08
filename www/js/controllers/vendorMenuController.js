@@ -8,6 +8,32 @@ angular.module('EmployeePanda.controllers')
 	 // Explicit Menu List
 	 this.vendorMenu = this.vendorInfo.menu;
 
+	 // Adding Category of Food Based on Number
+	 this.vendorMenu = this.vendorMenu.map(function(item, index, menu){
+	 	if(item.category === 'Veg')
+	 	{
+	 		item.categoryId = '1-V';
+	 		return item;
+	 	} else 
+	 	{
+	 		item.categoryId = '2-NV';
+	 		return item;
+	 	}
+	 });
+
+	 this.selectedCategory = '1-V';
+
+	 this.switchMenuCategory = function(category)
+	 {
+	 	if(category === 'Veg')
+	 	{
+	 		this.selectedCategory = '1-V';
+	 	} else if(category === 'Non-Veg')
+	 	{
+	 		this.selectedCategory = '2-NV';
+	 	}
+	 };
+
 	 this.orderCost = 0;
 
 	 this.updateOrderQuantity = function()
