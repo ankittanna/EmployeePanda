@@ -1,0 +1,31 @@
+<ion-view view-title="Vendor">
+    <ion-content>
+
+        <div class="row">
+            <div class="col">
+                <h1>{{userInfo.name}}</h1>
+                <label>
+                    <div class="row">
+                        <div ng-controller="RatingController as rating" class="container">
+                            <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="Search Order ID" ng-model="orderList.searchOrderStr">
+                </label>
+            </div>
+        </div>
+        
+         <div class="row">
+            <h2>Pending Orders - {{orders.length}} <a class="item-icon-right" href="#"> pending</a></h2>
+          
+        </div>
+
+
+    </ion-content>
+</ion-view>

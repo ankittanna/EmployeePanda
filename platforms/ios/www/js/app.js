@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+// 'EmployeePanda.services' is found in services.js
+// 'EmployeePanda.controllers' is found in controllers.js
+angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.directives', 'LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,64 +22,92 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 })
-
+.constant('ratingConfig', {
+    max: 5,
+    stateOn: null,
+    stateOff: null
+})
 .config(function($stateProvider, $urlRouterProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+    .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'views/appComponents/menu.html'
   })
+  .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/appComponents/login.html',
+          controller: 'LoginCtrl',
+          controllerAs: 'login'
+        }
+      }
+    })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+   .state('app.signup', {
+      url: '/signup',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/appComponents/signup.html',
+          controller: 'SignupCtrl',
+          controllerAs: 'signup'
+        }
+      }
+    })
+    
+ .state('app.vendorList', {
+    url: '/vendorlist',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'menuContent': {
+        templateUrl: 'views/employee/vendorlist.html',
+        controller: 'VendorListController',
+        controllerAs: 'vendorList'
+      }
+    }
+  })
+  .state('app.vendorMenu', {
+    url: '/vendors/:vendorId',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/vendorMenu.html',
+        controller: 'VendorMenuController',
+        controllerAs: 'vendorMenu'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('app.vendorhome', {
+      url: '/vendorhome',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'menuContent': {
+          templateUrl: 'views/vendor/vendorHome.html',
+          controller: 'VendorCtrl',
+          controllerAs: 'vendor'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    
+    .state('app.playlists', {
+      url: '/playlists',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'menuContent': {
+          templateUrl: 'views/employee/playlists.html',
+          controller: 'PlaylistsCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('app.single', {
+    url: '/playlists/:playlistId',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'menuContent': {
+        templateUrl: 'views/employee/playlist.html',
+        controller: 'PlaylistCtrl'
       }
     }
   });
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
-
+  $urlRouterProvider.otherwise('/app/login');
 });

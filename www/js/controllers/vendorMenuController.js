@@ -10,6 +10,7 @@ angular.module('EmployeePanda.controllers')
 
 	 // Adding Category of Food Based on Number
 	 this.vendorMenu = this.vendorMenu.map(function(item, index, menu){
+         item[item._id] = 0;
 	 	if(item.category === 'Veg')
 	 	{
 	 		item.categoryId = '1-V';
@@ -22,18 +23,18 @@ angular.module('EmployeePanda.controllers')
 	 });
 
 	 this.selectedCategory = '1-V';
-
+    
 	 this.switchMenuCategory = function(category)
 	 {
-	 	if(category === 'Veg')
+	 	if(category === 'veg')
 	 	{
 	 		this.selectedCategory = '1-V';
-	 	} else if(category === 'Non-Veg')
+	 	} else if(category === 'nonveg')
 	 	{
 	 		this.selectedCategory = '2-NV';
 	 	}
 	 };
-
+    
 	 this.orderCost = 0;
 
 	 this.updateOrderQuantity = function()

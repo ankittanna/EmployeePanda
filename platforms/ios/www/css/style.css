@@ -1,1 +1,55 @@
 /* Empty. Add your own CSS if you like */
+.employeePandaLogo
+{
+    margin: 0 auto;
+}
+
+/* Rating Style */
+
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.star-rating .star {
+  padding: 1px;
+  color: #ddd;
+  font-size: 20px;
+  text-shadow: .05em .05em #aaa;
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.star-rating .star.filled {
+  color: #fd0;
+}
+.star-rating.readonly .star.filled {
+  color: #666;
+}
+
+/* Rating Style */
+
+/* Input Type Number */
+.inputTypeNumber{
+  background: gainsboro;
+  text-align: center;
+}
+
+/* Generic */
+.divContentCenter
+{
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+.checkoutBand
+{
+  background-color: gainsboro;
+}
+
+#ionicCheckoutBand.item {
+    background-color: gainsboro;
+}
