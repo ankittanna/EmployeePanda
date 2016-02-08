@@ -2,7 +2,7 @@
   <ion-content>
     <div class="list">
         <label class="item item-input">
-            <input type="text" placeholder="Search Orders" ng-model="orderList.searchOrderStr">
+            <input type="text" placeholder="Search Orders" ng-model="VendorCtrl.searchOrderStr">
         </label>
     </div>
     <label class="item item-input">
@@ -11,7 +11,7 @@
         </span>
     </label>
     <ion-list>
-      <ion-item ng-repeat="order in orders | filter: orderList.searchOrderStr" href="#/app/orders/{{order._id}}" ng-click="orderList.selectOrder(order)">
+      <ion-item ng-repeat="order in orders | filter: VendorCtrl.searchOrderStr" href="#/app/orders/{{order._id}}" ng-click="VendorCtrl.selectOrder(order)">
         <div class="row">
             <div class="col">{{order.orderby}}</div>  
             <div class="col">Rs. {{order.total}}</div>         
