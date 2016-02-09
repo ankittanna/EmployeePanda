@@ -1,5 +1,5 @@
 angular.module('EmployeePanda.controllers')
-.controller('VendorMenuController', function($scope, $stateParams, EmployeeService, DetailsService) {  
+.controller('VendorMenuController', function($scope, $stateParams, EmployeeService, DetailsService, $state) {  
      this.vendorId = $stateParams.vendorId;
      
      // Fetch Vendor Information
@@ -36,6 +36,7 @@ angular.module('EmployeePanda.controllers')
 	 };
     
 	 this.orderCost = 0;
+	 this.itemsOrdered = [];
 
 	 this.updateOrderQuantity = function()
 	 {
@@ -66,6 +67,26 @@ angular.module('EmployeePanda.controllers')
 	 	var totalCost = itemsCostForOrder.reduce(function(a, b) { return a + b; }, 0);
 
 	 	return parseInt(totalCost) || 0;
+	 };
+
+	 this.proceedToCheckout = function(){
+	 	DetailsService.employeeOrder.employeeOrder.remove();
+
+	 	this.itemsOrdered = this.vendorInfo.menu.map(function(item, index, array){
+	 		if(item.quantity !== 0 && item.quantity > 0)
+	 		{
+	 			return item;
+	 		} else 
+	 		{
+	 			return;
+	 		}
+	 	});
+
+	 	this.itemsOrdered.clean(null);
+
+	 	DetailsService.employeeOrder.employeeOrder.set(this.itemsOrdered);
+
+	 	$state.go('app.checkoutOrder');
 	 };
 
 });

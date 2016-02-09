@@ -14,6 +14,20 @@ angular.module('EmployeePanda.services')
       }
     }
   };
+
+  this.employeeOrderStorage = {
+    employeeOrder:{
+      set: function(obj){
+        localStorageService.set('employeeOrderObject', obj);
+      },
+      get: function(){
+        return localStorageService.get('employeeOrderObject');
+      },
+      remove: function(){
+        localStorageService.set('employeeOrderObject');
+      }
+    }
+  };
   
   this.orderInfoStorage = {
     selectedOrder:{
@@ -48,6 +62,7 @@ angular.module('EmployeePanda.services')
   return {
     vendorInfo: this.vendorInfoStorage,
     loginInfo: this.loginInfoStorage,
-    orderInfo: this.orderInfoStorage
+    orderInfo: this.orderInfoStorage,
+    employeeOrder: this.employeeOrderStorage
   };
 });
