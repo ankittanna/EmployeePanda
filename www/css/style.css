@@ -104,3 +104,25 @@ input[type=number]::-webkit-inner-spin-button {
 .loginbox {
     margin-top: 200px;  
 }
+.appcomponent {
+    background: url(../img/AppBackground.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: auto;
+    z-index: 2;
+}
+.bar, .bar .title {
+    height:60px;
+}
+
+.has-header {
+    top: 60px;
+}
+
+div.transbox {
+    background-color:  #ccccb3;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
