@@ -1,12 +1,25 @@
 angular.module('EmployeePanda.controllers')
 .controller('VendorMenuController', function($scope, $stateParams, EmployeeService, DetailsService, $state) {  
+     // Clearing the existing order
+     DetailsService.employeeOrder.employeeOrder.remove();
+
      this.vendorId = $stateParams.vendorId;
      
      // Fetch Vendor Information
-     this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get('selectedVendorObject');
+     this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get();
 	 
+	 // Fetch Employee Information
+	 this.employeeInfo = DetailsService.loginInfo.userInfo.get();
+
 	 // Explicit Menu List
 	 this.vendorMenu = this.vendorInfo.menu;
+
+	 // Order Details Object
+	 this.orderDetails = {
+	 	"orderto": this.vendorInfo.emailid,
+		"orderby": this.employeeInfo.emailid,
+		"ordereditems":[]
+	};
 
 	 // Adding Category of Food Based on Number
 	 this.vendorMenu = this.vendorMenu.map(function(item, index, menu){
@@ -84,9 +97,13 @@ angular.module('EmployeePanda.controllers')
 
 	 	this.itemsOrdered.clean(null);
 
-	 	DetailsService.employeeOrder.employeeOrder.set(this.itemsOrdered);
+	 	this.orderDetails.vendorName = this.vendorInfo.name;
+	 	this.orderDetails.ordereditems = this.itemsOrdered;
+	 	this.orderDetails.totalCost = this.orderCost;
 
-	 	$state.go('app.checkoutOrder');
+	 	DetailsService.employeeOrder.employeeOrder.set(this.orderDetails);
+
+	 	$state.go('app.confirmOrder');
 	 };
 
 });

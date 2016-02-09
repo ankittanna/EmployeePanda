@@ -1,29 +1,46 @@
-<ion-view view-title="Vendors">
+<ion-view view-title="Order">
   <ion-content>
-    <div class="list">
-        <label class="item item-input">
-            <input type="text" placeholder="Search Vendors" ng-model="vendorList.searchVendorStr">
-        </label>
-    </div>
     <label class="item item-input">
         <span class="input-label">
-            <h1 class="title">Confirm Order</h1>
+            <h2 class="title">Confirm Order</h2>
+        </span>
+    </label>
+    <label class="item item-input">
+        <span class="input-label">
+            <h1 class="title">{{confirmOrder.orderDetails.vendorName}}</h1>
         </span>
     </label>
     <ion-list>
-      <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor._id}}" ng-click="vendorList.selectVendor(vendor)">
+      <ion-item ng-repeat="orderItem in confirmOrder.orderDetails.ordereditems">
         <div class="row">
-            <div class="col">{{vendor.name}}</div>
+            <div class="col">{{orderItem.itemname}}</div>
+            <div class="col">{{orderItem.quantity}}</div>
+            <div class="col">Rs. {{orderItem.quantity*orderItem.rate}}</div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <div class="row">
             <div class="col"></div>
+            <div class="col"><b>Total Value</b></div>
+            <div class="col">Rs. {{confirmOrder.orderDetails.totalCost}}</div>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <div class="row">
             <div class="col">
-                <a class="item-icon-right" href="#">
-                    <i class="icon ion-heart"></i>
-                </a>
+                <button class="button button-balanced button-full">
+                  Confirm
+                </button>
             </div>
         </div>
         <div class="row">
-            <div ng-controller="RatingController as rating" class="container">
-                <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+            <div class="col">
+                <button class="button button-assertive button-full">
+                  Cancel
+                </button>
             </div>
         </div>
       </ion-item>
