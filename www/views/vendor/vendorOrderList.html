@@ -14,6 +14,9 @@
       <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr" ng-click="vendor.selectOrder(order)">
         <div class="row">
             <div class="col">{{order.orderby}}</div>  
+            <div class="col" ng-show="order.status=='Order in Queue'">Order in Queue</div>
+            <div class="col" ng-show="order.status=='Order in Process'">Order in Process</div>
+            <div class="col" ng-show="order.status=='Order is Ready'">Order in Ready</div>  
             <div class="col">Rs. {{order.total}}</div>         
         </div>        
       </ion-item>

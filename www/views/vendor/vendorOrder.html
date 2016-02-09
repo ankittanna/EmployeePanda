@@ -1,36 +1,48 @@
 <ion-view view-title="Order">
   <ion-content>
-    <div class="list">
-        <label class="item item-input">
-            <div class="row">
-                <div class="col">
-                    <h1>Name: {{vendorOrder.orderInfo.orderby}}</h1>                   
-                </div>              
+    
+    <div class="row">
+        <div class="col">
+            <h2>Order Details</h2>                   
+        </div>              
+    </div>
+    
+        <ion-list>
+        <ion-item id="ionicCheckoutBand">
+            <div class="row checkoutBand">
+                <div class="col"><b>Order ID: </b></div>          
+                <div class="col">{{vendorOrder.orderInfo._id}}</div>           
             </div>
-        </label>
-    </div>   
+            <div class="row checkoutBand">
+                <div class="col"><b>Date & Time: </b></div>          
+                <div class="col">2016</div>           
+            </div>
+            <div class="row checkoutBand">
+                <div class="col"><b>Name</b></div>          
+                <div class="col">{{vendorOrder.orderInfo.orderby}}</div>           
+            </div>
+        </ion-item>
+    </ion-list>
+        
     <ion-list>
       <ion-item ng-repeat="menuItem in vendorOrder.orderMenu">
         <div class="row">
             <div class="col">{{menuItem.itemname}}</div>
             <div class="col">{{menuItem.quantity}}</div>
-            <div class="col">Rs. {{menuItem.total}}</div>           
+            <div class="col">Rs. {{menuItem.rate}}</div>           
         </div>
       </ion-item>
     </ion-list>
-    <ion-list>
-      <ion-item id="ionicCheckoutBand">
-          <div class="row checkoutBand">
-            <div class="col"><b>Total Value:</b></div>          
-            <div class="col">Rs. {{vendorMenu.orderCost}}</div>           
-          </div>
-      </ion-item>
-    </ion-list>
+   <div class="row">
+       <div class="col"></div>  
+    <div class="col"><b>Total Value:</b></div>          
+    <div class="col"><b>Rs. {{vendorOrder.orderInfo.total}}</b></div>           
+     </div>
     <ion-list>
       <ion-item id="ionicCheckoutBand">
           <div class="row checkoutBand">          
             <div class="col">
-                <button class="button button-dark">{{vendorOrder.orderInfo.status}}</button>
+                <button class="button button-dark" style="width:100%" ng-click="changeOrderStatus(vendorOrder.orderInfo._id)">{{vendorOrder.orderInfo.status}}</button>
             </div>
           </div>
       </ion-item>

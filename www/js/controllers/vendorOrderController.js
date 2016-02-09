@@ -7,5 +7,12 @@ angular.module('EmployeePanda.controllers')
 	 
 	 // Explicit Menu List
 	 this.orderMenu = this.orderInfo.ordereditems;	 
+     
+      this.changeOrderStatus = function(ordernumber,status) {
+	 	
+	  };
+    
+     
+     
 
 });
