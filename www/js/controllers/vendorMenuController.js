@@ -16,9 +16,9 @@ angular.module('EmployeePanda.controllers')
 
 	 // Order Details Object
 	 this.orderDetails = {
-	 	"orderto": this.vendorInfo.emailid,
-		"orderby": this.employeeInfo.emailid,
-		"ordereditems":[]
+	 	orderto: this.vendorInfo.emailid,
+		orderby: this.employeeInfo.emailid,
+		ordereditems:[]
 	};
 
 	 // Adding Category of Food Based on Number

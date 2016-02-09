@@ -2,12 +2,12 @@
   <ion-content>
     <label class="item item-input">
         <span class="input-label">
-            <h2 class="title">Confirm Order</h2>
+            <h2 class="title">Order Confirmed</h2>
         </span>
     </label>
     <label class="item item-input">
         <span class="input-label">
-            <h1 class="title">{{confirmOrder.orderDetails.vendorName}}</h1>
+            <h1 class="title">{{finishOrder.orderDetails.vendorName}}</h1>
         </span>
     </label>
     <ion-list>
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col"></div>
             <div class="col"><b>Total Value</b></div>
-            <div class="col">Rs. {{confirmOrder.orderDetails.totalCost}}</div>
+            <div class="col">Rs. {{finishOrder.orderDetails.totalCost}}</div>
         </div>
       </ion-item>
 

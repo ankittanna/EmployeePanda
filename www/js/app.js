@@ -77,6 +77,16 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
       }
     }
   })
+ .state('app.finishOrder', {
+    url: '/finishOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/finishOrder.html',
+        controller: 'FinishOrderController',
+        controllerAs: 'finishOrder'
+      }
+    }
+  })
   .state('app.vendorMenu', {
     url: '/vendors/:vendorId',
     views: {
