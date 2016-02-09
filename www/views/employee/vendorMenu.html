@@ -1,87 +1,79 @@
 <ion-view view-title="Vendor Menu">
-  <ion-content>
-    <div class="list">
-        <label class="item item-input">
-            <div class="row">
-                <div class="col">
-                    <h1>{{vendorMenu.vendorInfo.name}}</h1>
-                    <label>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <div class="row">
+                    <div class="col">
+                        <h1>{{vendorMenu.vendorInfo.name}}</h1>
+                        <label>
+                            <div class="row">
+                                <div ng-controller="RatingController as rating" class="container">
+                                    <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <a class="item-icon-right" href="#">
+                            <i class="icon ion-heart"></i>
+                        </a>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="vendorMenu.searchMenuKey">
+            </label>
+        </div>
+        <div class="item item-image">
+            <!--<img src="img/rest1.jpg">-->
+        </div>
+        <div class="button-bar">
+            <!--<a class="button button-positive active" ng-click="vendorMenu.switchMenuCategory('veg')">Veg</a>
+      <a class="button" ng-click="vendorMenu.switchMenuCategory('nonveg')">Non-Veg</a>-->
+        </div>
+        <ion-list>
+            <ion-item ng-repeat="menuItem in vendorMenu.vendorMenu | filter:vendorMenu.searchMenuKey track by $index">
+                <div class="row">
+                    <div class="col-10">
+                        <img src="img/veg.png" class="vegNonvegIcon" ng-show="{{menuItem.category === 'Veg'}}">
+                        <img src="img/nonveg.png" class="vegNonvegIcon" ng-show="{{menuItem.category === 'Non-Veg'}}">
+                    </div>
+                    <div class="col">{{menuItem.itemname}}</div>
+                    <div class="col">Rs. {{menuItem.rate}}</div>
+                    <div class="col-10">
                         <div class="row">
-                            <div ng-controller="RatingController as rating" class="container">
-                                <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
+                            <div class="col divContentCenter">
+                                <button class="button button-assertive button-small" ng-click="vendorMenu.decreaseCounter($index)">
+                                    <i class="icon ion-minus-round"></i>
+                                </button>
+                            </div>
+                            <div class="col divContentCenter">
+                                <input id="counter{{$index}}" type="number" value="0" class="inputTypeNumber" min="0" ng-model="vendorMenu.vendorMenu[$index].quantity"
+                                ng-change="vendorMenu.updateOrderQuantity()">
+                            </div>
+                            <div class="col divContentCenter">
+                                <button class="button button-balanced button-small" ng-click="vendorMenu.increaseCounter($index)">
+                                    <i class="icon ion-plus-round"></i>
+                                </button>
                             </div>
                         </div>
-                    </label>
-                </div>
-                <div class="col"></div>
-                <div class="col">
-                    <a class="item-icon-right" href="#">
-                        <i class="icon ion-heart"></i>
-                    </a>
-                </div>
-            </div>
-        </label>
-    </div>
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search" ng-model="vendorMenu.searchMenuKey">
-      </label>
-    </div>
-    <div class="item item-image">
-        <!--<img src="img/rest1.jpg">-->
-    </div>
-    <div class="button-bar">
-      <!--<a class="button button-positive active" ng-click="vendorMenu.switchMenuCategory('veg')">Veg</a>
-      <a class="button" ng-click="vendorMenu.switchMenuCategory('nonveg')">Non-Veg</a>-->
-    </div>
-    <ion-list>
-      <ion-item ng-repeat="menuItem in vendorMenu.vendorMenu | filter:vendorMenu.searchMenuKey track by $index">
-        <div class="row">
-            <div class="col-10">
-                <img src="img/veg.png" class="vegNonvegIcon" ng-show="{{menuItem.category === 'Veg'}}">
-                <img src="img/nonveg.png" class="vegNonvegIcon" ng-show="{{menuItem.category === 'Non-Veg'}}">
-            </div>
-            <div class="col">{{menuItem.itemname}}</div>
-            <div class="col">Rs. {{menuItem.rate}}</div>
-            <div class="col">
-                <div class="row">
-                    <div class="col divContentCenter">
-                        <button class="button" ng-click="vendorMenu.decreaseCounter($index)">
-                          <i class="icon ion-minus-round"></i>
-                        </button>
                     </div>
-                    <div class="col">
-                        <input id="counter{{$index}}" 
-                        type="number" 
-                        value="0" 
-                        class="inputTypeNumber" 
-                        min="0" 
-                        ng-model="vendorMenu.vendorMenu[$index].quantity"
-                        ng-change="vendorMenu.updateOrderQuantity()">
-                    </div>
-                    <div class="col divContentCenter">
-                        <button class="button" ng-click="vendorMenu.increaseCounter($index)">
-                          <i class="icon ion-plus-round"></i>
-                        </button>
-                    </div>
+                    <div class="col-10"></div>
                 </div>
-            </div>
-        </div>
-      </ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item id="ionicCheckoutBand">
-          <div class="row checkoutBand">
-            <div class="col"><b>Total Value:</b></div>          
-            <div class="col">Rs. {{vendorMenu.orderCost}}</div>
-            <div class="col">
-                <button class="button button-dark" ng-click="vendorMenu.proceedToCheckout()">Checkout</button>
-            </div>
-          </div>
-      </ion-item>
-    </ion-list>
- <!-- <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div> -->
- 
-  </ion-content>
+            </ion-item>
+        </ion-list>
+        <div class="row"></div>
+
+    </ion-content>
+
+    <div class="bar bar-footer">
+        <div class="col"><b>Total Value:</b></div>
+        <div class="col">Rs. {{vendorMenu.orderCost}}</div>
+        <button class="button button-balanced" ng-click="vendorMenu.proceedToCheckout()">Checkout</button>
+    </div>
+
 </ion-view>
