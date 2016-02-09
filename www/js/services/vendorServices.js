@@ -16,11 +16,26 @@ function vendorServices($http,DetailsService) {
     {
         
     }
+    
+    function changeOrderStatus(orderChangeObject){
+        return $http({
+            method: 'PUT',
+            url: baseUrl + '/order',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: orderChangeObject
+        }).then(function(response) {
+            console.log(response.data) ;                       
+            return response.data;
+        }); 
+    }
 
     // Object Map of functions
     return {
         getOrders: getOrders,
-        getVendorInformation: getVendorInformation
+        getVendorInformation: getVendorInformation,
+        changeOrderStatus: changeOrderStatus
     };
 }
 

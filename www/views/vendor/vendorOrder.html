@@ -42,7 +42,7 @@
       <ion-item id="ionicCheckoutBand">
           <div class="row checkoutBand">          
             <div class="col">
-                <button class="button button-dark" style="width:100%" ng-click="changeOrderStatus(vendorOrder.orderInfo._id)">{{vendorOrder.orderInfo.status}}</button>
+                <button class="button button-dark" style="width:100%" ng-click="vendorOrder.changeOrderStatus(vendorOrder.orderInfo._id,vendorOrder.orderInfo.status)">{{vendorOrder.orderInfo.status}}</button>
             </div>
           </div>
       </ion-item>
