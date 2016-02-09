@@ -79,3 +79,28 @@ input[type=number]::-webkit-inner-spin-button {
 .list:last-child {
     margin-bottom: 35px;
 }
+
+.circle {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px; 
+  background-color: #ccc;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.loginview {
+    background-image: url("../img/Login_BG.png");
+    background-size: contain;  
+}
+
+.loginview img{
+    width:150px;
+}
+
+.loginbox {
+    margin-top: 200px;  
+}

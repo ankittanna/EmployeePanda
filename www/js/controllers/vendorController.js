@@ -3,8 +3,10 @@ angular.module('EmployeePanda.controllers').controller('VendorCtrl', function($s
         $scope.orders = [];  
         
         $scope.userInfo = DetailsService.loginInfo.userInfo.get();
-
-        VendorService.getOrders().then(function(data) {            
+        
+        this.getOrders = function(){
+            
+            VendorService.getOrders().then(function(data) {            
             $scope.orders = data; 
                  
             for (var i=0; i<$scope.orders.length; i++) {
@@ -14,9 +16,14 @@ angular.module('EmployeePanda.controllers').controller('VendorCtrl', function($s
                 }
                 $scope.orders[i].total = total;
             }
-        }).catch(function(response) {
-              console.log(JSON.stringify(response));
-        });
+            }).catch(function(response) {
+                console.log(JSON.stringify(response));
+            });
+            
+        }
+        
+        this.getOrders();
+        
         
         this.selectOrder = function(orderObject){
         	DetailsService.orderInfo.selectedOrder.set(orderObject);
