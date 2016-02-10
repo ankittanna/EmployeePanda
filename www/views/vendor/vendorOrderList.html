@@ -1,19 +1,37 @@
-<ion-view view-title="Orders">
+<ion-view view-title="Orders" class="appcomponent vendororderlist">
+    <ion-nav-title>
+        <img src="../../img/Home_TopBar_withoutIcons.png" style="height:60px">
+    </ion-nav-title>
   <ion-content>
-    <div class="list">
-        <label class="item item-input">
-            <input type="text" placeholder="Search Orders" ng-model="VendorCtrl.searchOrderStr">
+      
+       <div class="list" style="margin-bottom: 0; background-image: url(../../img/{{ userInfo.imgname}})">
+            <label class="item item-input vendoritem" style="background-image: url(../../img/{{ userInfo.imgname }})">
+           
+            <div class="row" style="position:absolute">
+                    <h1>{{userInfo.name}}</h1>
+             </div>
+                <div class="row" style="margin-top:100px">
+                    <div class="list list-inset" style="width:100%">
+                        <label class="item item-input">
+                            <i class="icon ion-search placeholder-icon"></i>
+                            <input type="text" placeholder="Search Orders" ng-model="VendorCtrl.searchOrderStr">
+                        </label>
+                    </div>
+                </div>
+                
+            </label>
+        </div>
+        
+        <label class="item-input">
+            <h2 class="title">Orders</h2>
         </label>
-    </div>
-    <label class="item item-input">
-        <span class="input-label">
-            <h1 class="title">Orders</h1>
-        </span>
-    </label>
+        
+
+   
     <ion-list>
       <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr" ng-click="vendor.selectOrder(order)">
         <div class="row">
-            <div class="col">{{order.orderby}}</div>  
+            <div class="col">{{order.orderbyname}}</div>  
             <div class="col" ng-show="order.status=='Order in Queue'">Order in Queue</div>
             <div class="col" ng-show="order.status=='Order in Process'">Order in Process</div>
             <div class="col" ng-show="order.status=='Order is Ready'">Order is Ready</div>  

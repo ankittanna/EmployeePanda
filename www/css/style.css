@@ -173,3 +173,7 @@ div.vendoritem div.transbox{
 .totalvalue {
     font-size: 120%;
 }
+
+.button-full-footer {
+    width:100%;
+}

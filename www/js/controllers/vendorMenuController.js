@@ -18,6 +18,10 @@ angular.module('EmployeePanda.controllers')
 	 this.orderDetails = {
 	 	orderto: this.vendorInfo.emailid,
 		orderby: this.employeeInfo.emailid,
+        ordertoname: this.vendorInfo.name,
+        orderbyname: this.employeeInfo.name,
+        ordertophoneno:this.vendorInfo.phonenumber,
+        orderbyphoneno:this.employeeInfo.phonenumber,
 		ordereditems:[]
 	};
 

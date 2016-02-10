@@ -4,6 +4,8 @@ angular.module('EmployeePanda.controllers')
      
      // Fetch Vendor Information
      this.orderInfo = DetailsService.orderInfo.selectedOrder.get('selectedOrderObject');
+     
+      $scope.userInfo = DetailsService.loginInfo.userInfo.get();
 	 
 	 // Explicit Menu List
 	 this.orderMenu = this.orderInfo.ordereditems;	 
