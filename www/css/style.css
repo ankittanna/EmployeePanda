@@ -106,7 +106,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .scroll-content {
     background: url(../img/AppBackground.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: contain;
     background-position: center;
     margin: auto;
@@ -187,4 +187,19 @@ div.vendoritem div.transbox{
 {
     height: 23px;
     margin-left: -20px !important;
+}
+
+.textAlignCenter
+{
+  text-align: center;
+}
+
+.orderCard .item
+{
+  background: none !important;
+}
+
+.orderCard
+{
+  background: #0a9dc7;
 }
