@@ -6,7 +6,7 @@ angular.module('EmployeePanda.controllers')
     
     $scope.myOrdersList = [];
     this.myOrdersList = [];
-    EmployeeService.getMyOrders(this.employeeInfo).then(function(data){
+    EmployeeService.getMyOrders(this.employeeInfo.emailid).then(function(data){
     	$scope.myOrdersList = data;
         this.myOrdersList = data;
 

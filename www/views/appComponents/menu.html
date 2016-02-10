@@ -9,7 +9,7 @@
         </button>
       </ion-nav-buttons>
       <ion-nav-buttons side="right">
-        <img src="img/Home_TopBar_OrderIcon.png" class="bellIconStyle"><span class="badge badge-assertive bellBadgeStyle">3</span>
+        <img src="img/Home_TopBar_OrderIcon.png" class="bellIconStyle" ng-click="appMenu.goToMyOrders()"><span class="badge badge-assertive bellBadgeStyle" ng-click="appMenu.goToMyOrders()" ng-show="numberOfOrders > 0">{{numberOfOrders}}</span>
       </button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>

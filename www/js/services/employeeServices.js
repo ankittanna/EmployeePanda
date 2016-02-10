@@ -1,4 +1,4 @@
-function employeeServices($http) {
+function employeeService($http) {
     'use strict';
     
     var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
@@ -25,9 +25,9 @@ function employeeServices($http) {
         });
     }
 
-    function getMyOrders(orderData)
+    function getMyOrders(userId)
     {
-        var url = baseUrl + '/vendors/getorders?orderby=vinod.khandelwal@accenture.com';
+        var url = baseUrl + '/vendors/getorders?orderby='+userId;
         return $http.get(url).then(function(response) {
             return response.data;
         });
@@ -42,6 +42,6 @@ function employeeServices($http) {
 }
 
 angular.module('EmployeePanda.services')
-.factory('EmployeeService', employeeServices);
+.factory('EmployeeService', employeeService);
 
 employeeServices.$inject = ['$http'];
