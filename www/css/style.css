@@ -126,3 +126,15 @@ div.transbox {
     opacity: 0.6;
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
+.locationIcon
+{
+    height: 30px;
+    margin-right: 5px;
+}
+.clockIcon
+{
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}

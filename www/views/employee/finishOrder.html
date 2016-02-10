@@ -6,25 +6,39 @@
         </span>
     </label>
     <label class="item item-input">
-        <span class="input-label">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <span class="input-label" style="text-align:center">
             <h1 class="title">{{finishOrder.orderDetails.vendorName}}</h1>
-        </span>
+          </span>
+        </div>
+        <div class="col"></div>
+      </div>
     </label>
+    <label class="item item-input">
+      <div class="row">
+        <div class="col"><b>Order Id</b><br>12345</div>
+        <div class="col"><b>Date & Time</b><br>29/01/2016 12:35 PM</div>
+      </div>
+    </label>
+    {{finishOrder.orderDetails}}
     <ion-list>
-      <ion-item ng-repeat="orderItem in confirmOrder.orderDetails.ordereditems">
+      <ion-item>
         <div class="row">
-            <div class="col">{{orderItem.itemname}}</div>
-            <div class="col">{{orderItem.quantity}}</div>
-            <div class="col">Rs. {{orderItem.quantity*orderItem.rate}}</div>
+            <div class="col"><img src="img/location.png" class="locationIcon">PDC1</div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <img src="img/clock.png" class="clockIcon">ETA 20 Mins
+            </div>
         </div>
       </ion-item>
     </ion-list>
     <ion-list>
       <ion-item>
         <div class="row">
-            <div class="col"></div>
-            <div class="col"><b>Total Value</b></div>
-            <div class="col">Rs. {{finishOrder.orderDetails.totalCost}}</div>
+            <div class="col"><b>Total Value</b> Rs. {{finishOrder.orderDetails.totalCost}}</div>
         </div>
       </ion-item>
 
@@ -49,7 +63,6 @@
   </ion-content>
   
   <div class="bar bar-footer">              
-         <button class="button button-assertive" ng-click="confirmOrder.cancelOrder()">Cancel</button>
-         <button class="button button-balanced" ng-click="confirmOrder.confirmOrder()"> Confirm </button>  
+         <button class="button button-balanced button-full" ng-click="confirmOrder.cancelOrder()">Back to Home</button>
     </div>
 </ion-view>
