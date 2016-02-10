@@ -30,6 +30,10 @@ angular.module('EmployeePanda.controllers').controller('VendorCtrl', function($s
             $state.go('app.orderedMenu');
         };
         
+        this.goToOrderList = function()
+        {
+            $state.go('app.vendorOrderList');
+        };
     
 });
     

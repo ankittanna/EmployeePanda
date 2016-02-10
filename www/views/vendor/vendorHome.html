@@ -18,14 +18,8 @@
         </label>
 
 
-        <div class="circle">
-            <div class="row">
-                <h2>{{orders.length}}</h2>
-            </div>
-
-            <div class="row">
-                <h2> <a class="item-icon-right" href="#/app/vendororderlist"> pending</a></h2>
-            </div>
+        <div class="circle" ng-click="vendor.goToOrderList()">
+                <h2 class="alignPendingOrders">{{orders.length}} Pending</h2>
         </div>
 
     </ion-content>

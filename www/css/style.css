@@ -84,12 +84,34 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 50%;
   width: 160px;
   height: 160px; 
-  background-color: #ccc;
   margin: 0 auto;
   text-align: center;
   vertical-align: middle;
-  line-height: 2;
+  background: #ffc800;
+  background-image: -webkit-linear-gradient(top, #ffc800, #d1a402);
+  background-image: -moz-linear-gradient(top, #ffc800, #d1a402);
+  background-image: -ms-linear-gradient(top, #ffc800, #d1a402);
+  background-image: -o-linear-gradient(top, #ffc800, #d1a402);
+  background-image: linear-gradient(to bottom, #ffc800, #d1a402);
+  -webkit-box-shadow: 2px 2px 3px #000000;
+  -moz-box-shadow: 2px 2px 3px #000000;
+  box-shadow: 2px 2px 3px #000000;
+  color: #000000;
+  padding: 0px 0px 0px 0px;
+  border: solid #000000 5px;
+  text-decoration: none;
   /* width and height can be anything, as long as they're equal */
+}
+
+.circle:hover, .circle:active
+{
+  background: #b38c00;
+  background-image: -webkit-linear-gradient(top, #b38c00, #ffc900);
+  background-image: -moz-linear-gradient(top, #b38c00, #ffc900);
+  background-image: -ms-linear-gradient(top, #b38c00, #ffc900);
+  background-image: -o-linear-gradient(top, #b38c00, #ffc900);
+  background-image: linear-gradient(to bottom, #b38c00, #ffc900);
+  text-decoration: none;
 }
 
 .loginview {
@@ -211,3 +233,8 @@ div.vendoritem div.transbox{
 }
 
 .inProgressStatus{}
+
+.alignPendingOrders
+{
+  line-height: 160px;
+}
