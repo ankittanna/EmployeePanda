@@ -30,10 +30,12 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'views/appComponents/menu.html'
+    templateUrl: 'views/appComponents/menu.html',
+    controller: 'AppMenuController',
+    controllerAs: 'appMenu'
   })
   .state('app.login', {
       url: '/login',
@@ -84,6 +86,16 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
         templateUrl: 'views/employee/finishOrder.html',
         controller: 'FinishOrderController',
         controllerAs: 'finishOrder'
+      }
+    }
+  })
+ .state('app.myOrders', {
+    url: '/myOrders',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/myOrders.html',
+        controller: 'MyOrdersController',
+        controllerAs: 'myOrders'
       }
     }
   })

@@ -28,13 +28,13 @@
         </div>
 
       <ion-list>
-        <ion-item menu-close href="#/app/search">
+        <ion-item menu-close ng-click="appMenu.goToPage('app.myOrders')">
           My Orders
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
+        <ion-item menu-close ng-click="appMenu.goToPage()">
           Settings
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+        <ion-item menu-close ng-click="appMenu.goToPage()">
           Logout
         </ion-item>
       </ion-list>
