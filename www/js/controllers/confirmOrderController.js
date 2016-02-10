@@ -1,6 +1,9 @@
 angular.module('EmployeePanda.controllers')
 .controller('ConfirmOrderController', function($scope, $stateParams, EmployeeService, DetailsService, $state) {  
     this.orderDetails = DetailsService.employeeOrder.employeeOrder.get();
+    
+    // Fetch Vendor Information
+     this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get();
 
     this.postOrderObject = {};
     if(this.orderDetails !== null)
@@ -14,7 +17,7 @@ angular.module('EmployeePanda.controllers')
     	if(this.postOrderObject !== {})
     	{
     		EmployeeService.confirmEmployeeOrder(this.postOrderObject).then(function(response){
-    		$state.go('app.finishOrder');
+    		  $state.go('app.finishOrder');
 	    	}).catch(function(error){
 	    		alert("Error placing your order. Please contact Vendor directly.");
 	    	});

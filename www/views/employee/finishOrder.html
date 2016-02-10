@@ -1,21 +1,22 @@
-<ion-view view-title="Order">
-  <ion-content>
-    <label class="item item-input">
-        <span class="input-label">
-            <h2 class="title">Order Confirmed</h2>
-        </span>
-    </label>
-    <label class="item item-input">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col">
-          <span class="input-label" style="text-align:center">
-            <h1 class="title">{{finishOrder.orderDetails.vendorName}}</h1>
-          </span>
+<ion-view view-title="Order" class="appcomponent vendormenu">
+     <ion-nav-title>
+        <img src="../../img/Home_TopBar_withoutIcons.png" style="height:60px">
+    </ion-nav-title>
+  <ion-content>      
+      <div class="list" style="margin-bottom: 0; background-image: url(../../img/{{ finishOrder.vendorInfo.imgname }})">
+            <label class="item item-input vendoritem" style="background-image: url(../../img/{{ finishOrder.vendorInfo.imgname }})">
+           
+            <div class="row" style="position:absolute">
+                    <h1 class="title">{{finishOrder.orderDetails.vendorName}}</h1>
+             </div>                
+            </label>
         </div>
-        <div class="col"></div>
-      </div>
+        
+        
+    <label class="item-input">       
+         <h2 class="title">Order Confirmed</h2>      
     </label>
+   
     <label class="item item-input">
       <div class="row">
         <div class="col"><b>Order Id</b><br>12345</div>
