@@ -141,16 +141,6 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
         controllerAs: 'vendorOrder'
       }
     }
-  })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/employee/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');

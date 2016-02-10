@@ -27,15 +27,8 @@ function employeeServices($http) {
 
     function getMyOrders(orderData)
     {
-        return $http({
-            method: 'POST',
-            url: baseUrl + '/employee/getorders',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: orderData
-        }).then(function(response) {
-            console.log(response.data);
+        var url = baseUrl + '/vendors/getorders?orderby=vinod.khandelwal@accenture.com';
+        return $http.get(url).then(function(response) {
             return response.data;
         });
     }
