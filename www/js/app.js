@@ -30,34 +30,25 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
+.state('login', {
+  url: '/login',
+  templateUrl: 'views/appComponents/login.html',
+  controller: 'LoginCtrl',
+  controllerAs: 'login'
+})
+.state('signup', {
+    url: '/signup',
+    templateUrl: 'views/appComponents/signup.html',
+    controller: 'SignupCtrl',
+    controllerAs: 'signup'
+})
+.state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'views/appComponents/menu.html',
     controller: 'AppMenuController',
     controllerAs: 'appMenu'
   })
-  .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/appComponents/login.html',
-          controller: 'LoginCtrl',
-          controllerAs: 'login'
-        }
-      }
-    })
-
-   .state('app.signup', {
-      url: '/signup',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/appComponents/signup.html',
-          controller: 'SignupCtrl',
-          controllerAs: 'signup'
-        }
-      }
-    })
     
  .state('app.vendorList', {
     url: '/vendorlist',

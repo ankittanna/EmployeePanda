@@ -20,7 +20,7 @@ angular.module('EmployeePanda.controllers', [])
     
     this.signup = function(){
         console.log("Does this come here!!");
-        $state.go('app.signup');
+        $state.go('signup');
     };
   
 });
