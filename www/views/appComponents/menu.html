@@ -29,20 +29,34 @@
             <div class="col">
             </div>
         </div>
-        
-      <ion-list>
-          <ion-list>
+      <ion-list ng-switch on="appMenu.loginInfo.role">
+          <ion-list ng-switch-when="Employee">
             <ion-item menu-close ng-click="appMenu.goToPage('app.myOrders')">
-              My Orders EMP
+              My Orders
             </ion-item>
             <ion-item menu-close ng-click="appMenu.goToPage()">
               Settings
             </ion-item>
+            <ion-item menu-close ng-click="appMenu.goToPage('login')">
+              Logout
+            </ion-item>
+        </ion-list>
+        <ion-list ng-switch-when="Vendor">
+            <ion-item menu-close ng-click="appMenu.goToPage('app.vendorhome')">
+              Orders
+            </ion-item>
             <ion-item menu-close ng-click="appMenu.goToPage()">
+              Manage Food Menu
+            </ion-item>
+            <ion-item menu-close ng-click="appMenu.goToPage()">
+              Settings
+            </ion-item>
+            <ion-item menu-close ng-click="appMenu.goToPage('login')">
               Logout
             </ion-item>
         </ion-list>
       </ion-list>
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
