@@ -10,6 +10,7 @@ angular.module('EmployeePanda.controllers')
     	$scope.myOrdersList = data;
         this.myOrdersList = data;
 
+        angular.element('#orderInfo').empty();
         angular.element('#orderInfo').qrcode({
             text: JSON.stringify($scope.myOrdersList[0].ordernumber)
         });
@@ -65,6 +66,7 @@ angular.module('EmployeePanda.controllers')
         {
             this.currentIndex = this.currentIndex - 1;
             
+            angular.element('#orderInfo').empty();
             angular.element('#orderInfo').qrcode({
                 text: JSON.stringify($scope.myOrdersList[this.currentIndex].ordernumber)
             });
@@ -77,6 +79,7 @@ angular.module('EmployeePanda.controllers')
         {
             this.currentIndex = this.currentIndex + 1;
             
+            angular.element('#orderInfo').empty();
             angular.element('#orderInfo').qrcode({
                 text: JSON.stringify($scope.myOrdersList[this.currentIndex].ordernumber)
             });
