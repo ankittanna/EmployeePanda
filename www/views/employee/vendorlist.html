@@ -21,21 +21,21 @@
     
     <ion-list>
       <ion-item ng-repeat="vendor in vendors | filter: vendorList.searchVendorStr" href="#/app/vendors/{{vendor._id}}" ng-click="vendorList.selectVendor(vendor)">
-        <div class="row">
-            <div class="col">{{vendor.name}}</div>
-            <div class="col"></div>
+        <div class="row vendoritem" style="background-image: url(../../img/{{ vendor.imgname }})">
+            <div class="col transbox">{{vendor.name}}</div>
+            <!--<div class="col"></div>
             <div class="col">
                 <a class="item-icon-right" href="#">
                     <i class="icon ion-heart"></i>
                 </a>
-            </div>
+            </div>-->
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div ng-controller="RatingController as rating" class="container">
                 <star-rating ng-model="rating.rating2" readonly="true"></star-rating>
             </div>
         </div>
-      </ion-item>
+      </ion-item>-->
     </ion-list>
     
 

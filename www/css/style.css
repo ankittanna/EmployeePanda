@@ -140,6 +140,26 @@ div.transbox {
 }
 
 .qrcode canvas{
-      height: 150px;
+    height: 150px;
     width: 150px;
+}
+
+.vendoritem{
+    height:200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:0;
+}
+
+.vendorlist .item-complex .item-content {
+    padding-right: 16px;
+}
+
+div.vendoritem div.transbox{
+    height:60px;
+    margin-top: 140px;
+    color: white;
+     border: none;
+     background-color:  black;
+     font-weight: bold;
 }
