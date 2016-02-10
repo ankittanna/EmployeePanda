@@ -14,7 +14,6 @@ angular.module('EmployeePanda.controllers')
             this.userData.role = 'Employee';
             
             EPS.signupUser(this.userData).then(function(data) {
-            alert(JSON.stringify(data));
             $state.go('app.login');
             }).catch(function(response) {
                 var alertPopup = $ionicPopup.alert({
