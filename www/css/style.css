@@ -121,8 +121,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 div.transbox {
-    background-color:  #ccccb3;
-    border: 1px solid black;
+    background-color:  black;
     opacity: 0.6;
     filter: alpha(opacity=60); /* For IE8 and earlier */
 }
@@ -158,10 +157,8 @@ div.transbox {
 div.vendoritem div.transbox{
     height:60px;
     margin-top: 140px;
-    color: white;
-     border: none;
-     background-color:  black;
-     font-weight: bold;
+    color: white;  
+    font-weight: bold;
 }
 
 .listItemHeight
