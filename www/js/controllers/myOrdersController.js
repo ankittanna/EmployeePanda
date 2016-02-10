@@ -5,8 +5,10 @@ angular.module('EmployeePanda.controllers')
     };
     
     $scope.myOrdersList = [];
+    this.myOrdersList = [];
     EmployeeService.getMyOrders(this.employeeInfo).then(function(data){
     	$scope.myOrdersList = data;
+        this.myOrdersList = data;
     });
     
     this.calculateOrderAmount = function(orderedItems)
