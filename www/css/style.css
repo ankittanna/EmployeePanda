@@ -203,3 +203,11 @@ div.vendoritem div.transbox{
 {
   background: #0a9dc7;
 }
+
+.readyStatus
+{
+  color: green;
+  font-weight: bold;
+}
+
+.inProgressStatus{}

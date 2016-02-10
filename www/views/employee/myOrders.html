@@ -46,7 +46,7 @@
                       </div>
                       <div class="row">
                           <div class="col">
-                            <b>Order Status: </b>{{myOrdersList[myOrders.currentIndex].status}}
+                            <b>Order Status: </b><label class="{{myOrdersList[myOrders.currentIndex].status == 'Order is Ready'?'readyStatus':'inProgressStatus'}}">{{myOrdersList[myOrders.currentIndex].status}}</label>
                           </div>
                       </div>
                   </div>
