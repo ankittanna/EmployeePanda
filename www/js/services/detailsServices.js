@@ -43,6 +43,19 @@ angular.module('EmployeePanda.services')
     }
   };  
   
+  this.confirmedOrderInfoStorage = {
+    orderInfo:{
+      set: function(obj){
+        localStorageService.set('confirmedOrderInfoObject', obj);
+      },
+      get: function(){
+        return localStorageService.get('confirmedOrderInfoObject');
+      },
+      remove: function(){
+        localStorageService.set('confirmedOrderInfoObject');
+      }
+    }
+  };
   
    this.loginInfoStorage = {
     userInfo:{
@@ -63,6 +76,7 @@ angular.module('EmployeePanda.services')
     vendorInfo: this.vendorInfoStorage,
     loginInfo: this.loginInfoStorage,
     orderInfo: this.orderInfoStorage,
-    employeeOrder: this.employeeOrderStorage
+    employeeOrder: this.employeeOrderStorage,
+    confirmedOrderInfo: this.confirmedOrderInfoStorage
   };
 });

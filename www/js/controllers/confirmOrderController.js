@@ -14,6 +14,7 @@ angular.module('EmployeePanda.controllers')
     	if(this.postOrderObject !== {})
     	{
     		EmployeeService.confirmEmployeeOrder(this.postOrderObject).then(function(response){
+    		DetailsService.confirmedOrderInfo.orderInfo.set(response);
     		$state.go('app.finishOrder');
 	    	}).catch(function(error){
 	    		alert("Error placing your order. Please contact Vendor directly.");

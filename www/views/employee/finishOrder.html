@@ -7,24 +7,25 @@
     </label>
     <label class="item item-input">
       <div class="row">
-        <div class="col"></div>
+        <div class="col">
+        </div>
         <div class="col">
           <span class="input-label" style="text-align:center">
-            <h1 class="title">{{finishOrder.orderDetails.vendorName}}</h1>
+            <h1 class="title">{{finishOrder.vendorDetails.vendorName}}</h1>
           </span>
         </div>
-        <div class="col"></div>
+        <div class="col">
+        </div>
       </div>
     </label>
     <label class="item item-input">
       <div class="row">
-        <div class="col"><b>Order Id</b><br>12345</div>
+        <div class="col"><b>Order Id</b><br>{{finishOrder.orderDetails.ordernumber}}</div>
         <div class="col">
         </div>
-        <div class="col"><b>Date & Time</b><br>29/01/2016 12:35 PM</div>
+        <div class="col"><b>Date & Time</b><br>{{finishOrder.convertTimeFormat(finishOrder.orderDetails.ordertime)}}</div>
       </div>
     </label>
-    {{finishOrder.orderDetails}}
     <ion-list>
       <ion-item>
         <div class="row">
@@ -38,6 +39,11 @@
         <div class="row">
             <div class="col">
               <img src="img/clock.png" class="clockIcon">ETA 20 Mins
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <b>Order Status: </b>{{finishOrder.orderDetails.status}}
             </div>
         </div>
       </ion-item>
