@@ -20,6 +20,31 @@
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
+    <name>Employee Panda</name>
+    <description>
+        An app to kill your hunger.
+    </description>
+    <feature name="BMSClient">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSClient" />
+    </feature>
+    <feature name="MFPRequest">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVMFPRequest" />
+    </feature>
+    <feature name="MFPLogger">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVMFPLogger" />
+    </feature>
+    <feature name="MFPAnalytics">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVMFPAnalytics" />
+    </feature>
+    <feature name="MFPAuthorizationManager">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVMFPAuthorizationManager" />
+    </feature>
+    <feature name="MFPAuthenticationContext">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVMFPAuthenticationContext" />
+    </feature>
+    <feature name="MFPPushPlugin">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.push.CDVMFPPush" />
+    </feature>
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
     <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
     <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -38,12 +63,12 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-    <name>Employee Panda</name>
+    <name>HelloCordova</name>
     <description>
-        An app to kill your hunger.
+        An Ionic Framework and Cordova project.
     </description>
-    <author email="ankit.bharat.tanna@accenture.com" href="http://example.com.com/">
-      DMC, Accenture
+    <author email="you@example.com" href="http://example.com.com/">
+      Your Name Here
     </author>
     <content src="index.html" />
     <access origin="*" />

@@ -38,6 +38,54 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/ibm-mfp-core/www/BMSClient.js",
+        "id": "ibm-mfp-core.BMSClient",
+        "pluginId": "ibm-mfp-core",
+        "clobbers": [
+            "BMSClient"
+        ]
+    },
+    {
+        "file": "plugins/ibm-mfp-core/www/MFPRequest.js",
+        "id": "ibm-mfp-core.MFPRequest",
+        "pluginId": "ibm-mfp-core",
+        "clobbers": [
+            "MFPRequest"
+        ]
+    },
+    {
+        "file": "plugins/ibm-mfp-core/www/MFPLogger.js",
+        "id": "ibm-mfp-core.MFPLogger",
+        "pluginId": "ibm-mfp-core",
+        "clobbers": [
+            "MFPLogger"
+        ]
+    },
+    {
+        "file": "plugins/ibm-mfp-core/www/MFPAnalytics.js",
+        "id": "ibm-mfp-core.MFPAnalytics",
+        "pluginId": "ibm-mfp-core",
+        "clobbers": [
+            "MFPAnalytics"
+        ]
+    },
+    {
+        "file": "plugins/ibm-mfp-core/www/MFPAuthorizationManager.js",
+        "id": "ibm-mfp-core.MFPAuthorizationManager",
+        "pluginId": "ibm-mfp-core",
+        "clobbers": [
+            "MFPAuthorizationManager"
+        ]
+    },
+    {
+        "file": "plugins/ibm-mfp-push/www/MFPPush.js",
+        "id": "ibm-mfp-push.MFPPush",
+        "pluginId": "ibm-mfp-push",
+        "clobbers": [
+            "MFPPush"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -48,7 +96,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.1.0",
     "cordova-plugin-statusbar": "2.1.0",
     "cordova-plugin-whitelist": "1.2.1",
-    "ionic-plugin-keyboard": "1.0.8"
+    "ionic-plugin-keyboard": "1.0.8",
+    "ibm-mfp-core": "1.0.10",
+    "ibm-mfp-push": "1.0.12"
 }
 // BOTTOM OF METADATA
 });

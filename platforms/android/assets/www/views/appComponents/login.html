@@ -1,20 +1,20 @@
-<ion-view view-title="Employee Panda">
+<ion-view view-title="Employee Panda" class="loginview">
     <ion-content class="padding">
         <div class="row">
             <div class="col"></div>
-            <div class="col"><img ng-src="img/KFPanda.png"></div>
-            <div class="col">{{login.loginValue}}</div>
+            <div class="col"><img ng-src="img/Login_Logo.png"></div>
+            <div class="col"></div>
         </div>
-        <div class="list list-inset">
-            <label class="item item-input">
-                <input type="text" placeholder="Username" ng-model="data.username">
-            </label>
-            <label class="item item-input">
-                <input type="password" placeholder="Password" ng-model="data.password">
-            </label>
-        </div>
-        <button class="button button-block button-balanced" ng-click="login.login()">Login</button>
-        <button class="button button-block button-assertive" ng-click="login.signUp()">Sign Up</button>
-
+        
+        <div class="list list-inset loginbox">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.emailid">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+      <button class="button button-block button-balanced" ng-click="login.login()">Login</button>
+      <button class="button button-block button-assertive" ng-click="login.signup()">Sign Up</button>
     </ion-content>
 </ion-view>

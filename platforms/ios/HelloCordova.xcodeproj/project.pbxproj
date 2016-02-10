@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -40,6 +39,18 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		2FEB3E7FB438464DB3C53DB6 /* IMFClient+initializeException.m in Sources */ = {isa = PBXBuildFile; fileRef = 1153E51C7BEB4F2A9F0BC96E /* IMFClient+initializeException.m */; };
+		6F359F466E4143F18D3C859D /* CDVBMSClient.swift in Resources */ = {isa = PBXBuildFile; fileRef = C3CFE49727CA497391746121 /* CDVBMSClient.swift */; };
+		EEAD452D0FC04007AF2A9450 /* CDVMFPRequest.swift in Resources */ = {isa = PBXBuildFile; fileRef = E53CDA0DB3B9486FAF53BC7C /* CDVMFPRequest.swift */; };
+		D8C4380070F34308AE45C141 /* CDVMFPLogger.swift in Resources */ = {isa = PBXBuildFile; fileRef = 0A2DBD3C0F6D4FE4A29AEAE6 /* CDVMFPLogger.swift */; };
+		11039015660343C3950982C9 /* CDVMFPAnalytics.swift in Resources */ = {isa = PBXBuildFile; fileRef = 215FADB44E2B4A458344C256 /* CDVMFPAnalytics.swift */; };
+		B26DA2CC2DF6440292215303 /* CDVMFPAuthorizationManager.swift in Resources */ = {isa = PBXBuildFile; fileRef = 4998B214F1EB46BC853BEA70 /* CDVMFPAuthorizationManager.swift */; };
+		FF814DED5D824483ABD94150 /* CDVMFPAuthenticationContext.swift in Resources */ = {isa = PBXBuildFile; fileRef = 51C5C0AC029748D498F2A796 /* CDVMFPAuthenticationContext.swift */; };
+		ED9314DDB6B043E6A2C0C799 /* CustomErrorTypes.swift in Resources */ = {isa = PBXBuildFile; fileRef = E474B588F1D44F948BC152CA /* CustomErrorTypes.swift */; };
+		043116A2396F4CDFB7C59BC1 /* Utils.swift in Resources */ = {isa = PBXBuildFile; fileRef = 7B170DDAEB674FB494099B0F /* Utils.swift */; };
+		5187DFF7830C494EB04E297F /* IMFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25196143F1604AF6B1838C23 /* IMFCore.framework */; };
+		B9BF86CE0FF9482EA96B37CD /* CDVMFPPush.swift in Resources */ = {isa = PBXBuildFile; fileRef = 37AC196BB16247C494BD0FDA /* CDVMFPPush.swift */; };
+		AD6194D2432240DCA74ADA66 /* IMFPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8C7E0A04C547958BE822A9 /* IMFPush.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +116,20 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "HelloCordova/config.xml"; sourceTree = "<group>"; };
+		1153E51C7BEB4F2A9F0BC96E /* IMFClient+initializeException.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IMFClient+initializeException.m"; path = "ibm-mfp-core/IMFClient+initializeException.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C3CFE49727CA497391746121 /* CDVBMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVBMSClient.swift"; path = "ibm-mfp-core/CDVBMSClient.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		E53CDA0DB3B9486FAF53BC7C /* CDVMFPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPRequest.swift"; path = "ibm-mfp-core/CDVMFPRequest.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		0A2DBD3C0F6D4FE4A29AEAE6 /* CDVMFPLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPLogger.swift"; path = "ibm-mfp-core/CDVMFPLogger.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		215FADB44E2B4A458344C256 /* CDVMFPAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPAnalytics.swift"; path = "ibm-mfp-core/CDVMFPAnalytics.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		4998B214F1EB46BC853BEA70 /* CDVMFPAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPAuthorizationManager.swift"; path = "ibm-mfp-core/CDVMFPAuthorizationManager.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		51C5C0AC029748D498F2A796 /* CDVMFPAuthenticationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPAuthenticationContext.swift"; path = "ibm-mfp-core/CDVMFPAuthenticationContext.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		E474B588F1D44F948BC152CA /* CustomErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CustomErrorTypes.swift"; path = "ibm-mfp-core/CustomErrorTypes.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		7B170DDAEB674FB494099B0F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "Utils.swift"; path = "ibm-mfp-core/Utils.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		E22BDC82929249BE8D21F462 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "ibm-mfp-core/Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		63FDF92BF8F446C79B49D53F /* IMFClient+initializeException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IMFClient+initializeException.h"; path = "ibm-mfp-core/IMFClient+initializeException.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		25196143F1604AF6B1838C23 /* IMFCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "IMFCore.framework"; path = "HelloCordova/Plugins/ibm-mfp-core/IMFCore.framework"; sourceTree = "<group>"; };
+		37AC196BB16247C494BD0FDA /* CDVMFPPush.swift */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "CDVMFPPush.swift"; path = "ibm-mfp-push/CDVMFPPush.swift"; sourceTree = "<group>"; fileEncoding = 4; };
+		EC8C7E0A04C547958BE822A9 /* IMFPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "IMFPush.framework"; path = "HelloCordova/Plugins/ibm-mfp-push/IMFPush.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +141,8 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				5187DFF7830C494EB04E297F /* IMFCore.framework in Frameworks */,
+				AD6194D2432240DCA74ADA66 /* IMFPush.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +215,8 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				25196143F1604AF6B1838C23 /* IMFCore.framework */,
+				EC8C7E0A04C547958BE822A9 /* IMFPush.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,6 +232,18 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				1153E51C7BEB4F2A9F0BC96E /* IMFClient+initializeException.m */,
+				C3CFE49727CA497391746121 /* CDVBMSClient.swift */,
+				E53CDA0DB3B9486FAF53BC7C /* CDVMFPRequest.swift */,
+				0A2DBD3C0F6D4FE4A29AEAE6 /* CDVMFPLogger.swift */,
+				215FADB44E2B4A458344C256 /* CDVMFPAnalytics.swift */,
+				4998B214F1EB46BC853BEA70 /* CDVMFPAuthorizationManager.swift */,
+				51C5C0AC029748D498F2A796 /* CDVMFPAuthenticationContext.swift */,
+				E474B588F1D44F948BC152CA /* CustomErrorTypes.swift */,
+				7B170DDAEB674FB494099B0F /* Utils.swift */,
+				E22BDC82929249BE8D21F462 /* Bridging-Header.h */,
+				63FDF92BF8F446C79B49D53F /* IMFClient+initializeException.h */,
+				37AC196BB16247C494BD0FDA /* CDVMFPPush.swift */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -284,7 +325,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 510;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "__CLI__" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -387,6 +428,16 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				2FEB3E7FB438464DB3C53DB6 /* IMFClient+initializeException.m in Sources */,
+				6F359F466E4143F18D3C859D /* CDVBMSClient.swift in Resources */,
+				EEAD452D0FC04007AF2A9450 /* CDVMFPRequest.swift in Resources */,
+				D8C4380070F34308AE45C141 /* CDVMFPLogger.swift in Resources */,
+				11039015660343C3950982C9 /* CDVMFPAnalytics.swift in Resources */,
+				B26DA2CC2DF6440292215303 /* CDVMFPAuthorizationManager.swift in Resources */,
+				FF814DED5D824483ABD94150 /* CDVMFPAuthenticationContext.swift in Resources */,
+				ED9314DDB6B043E6A2C0C799 /* CustomErrorTypes.swift in Resources */,
+				043116A2396F4CDFB7C59BC1 /* Utils.swift in Resources */,
+				B9BF86CE0FF9482EA96B37CD /* CDVMFPPush.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +480,11 @@
 				);
 				PRODUCT_NAME = "HelloCordova";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"HelloCordova\Plugins\ibm-mfp-core\"",
+					"\"HelloCordova\Plugins\ibm-mfp-push\"",
+				);
 			};
 			name = Debug;
 		};
@@ -458,6 +514,11 @@
 				);
 				PRODUCT_NAME = "HelloCordova";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"HelloCordova\Plugins\ibm-mfp-core\"",
+					"\"HelloCordova\Plugins\ibm-mfp-push\"",
+				);
 			};
 			name = Release;
 		};
