@@ -3,6 +3,9 @@ angular.module('EmployeePanda.controllers')
     this.orderDetails = DetailsService.confirmedOrderInfo.orderInfo.get();
     this.vendorDetails = DetailsService.employeeOrder.employeeOrder.get();
 
+    // Fetch Vendor Information
+    this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get();
+     
     this.backToHome = function(){
         $state.go('app.vendorList');
     };
