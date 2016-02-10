@@ -9,22 +9,29 @@ angular.module('EmployeePanda.controllers')
     EmployeeService.getMyOrders(this.employeeInfo).then(function(data){
     	$scope.myOrdersList = data;
         this.myOrdersList = data;
-        console.log(JSON.stringify($scope.myOrdersList));
+
+        angular.element('#orderInfo').qrcode({
+            text: JSON.stringify($scope.myOrdersList[0].ordernumber)
+        });
+
     });
     
     this.currentIndex = 0;
 
     this.calculateOrderAmount = function(orderedItems)
     {
-        var itemsCostForOrder = orderedItems.map(function(item, index, array){
-	 		return parseInt(item.rate)*parseInt(item.quantity);
-	 	});
+        if(orderedItems !== undefined || orderedItems !== [] || orderedItems !== null)
+        {
+            var itemsCostForOrder = orderedItems.map(function(item, index, array){
+            return parseInt(item.rate)*parseInt(item.quantity);
+            });
 
-	 	var totalCost = itemsCostForOrder.reduce(function(a, b) { return a + b; }, 0);
+            var totalCost = itemsCostForOrder.reduce(function(a, b) { return a + b; }, 0);
 
-	 	return parseInt(totalCost) || 0;
+            return parseInt(totalCost) || 0;
+        }
     };
-    
+
     this.convertTimeFormat = function(time){
         var formattedDateTime, orderDate;
         if(time === undefined)
@@ -50,6 +57,30 @@ angular.module('EmployeePanda.controllers')
 
     this.backToHome = function(){
         $state.go('app.vendorList');
+    };
+
+    this.swipeRight = function(){
+        console.log("Right");
+        if(this.currentIndex > 0)
+        {
+            this.currentIndex = this.currentIndex - 1;
+            
+            angular.element('#orderInfo').qrcode({
+                text: JSON.stringify($scope.myOrdersList[this.currentIndex].ordernumber)
+            });
+        }
+    };
+
+    this.swipeLeft = function(){
+        console.log("Left");
+        if(this.currentIndex < $scope.myOrdersList.length - 1)
+        {
+            this.currentIndex = this.currentIndex + 1;
+            
+            angular.element('#orderInfo').qrcode({
+                text: JSON.stringify($scope.myOrdersList[this.currentIndex].ordernumber)
+            });
+        }
     };
 
 });

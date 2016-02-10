@@ -182,3 +182,9 @@ div.vendoritem div.transbox{
 {
   width: 50px;
 }
+
+.bellBadgeStyle
+{
+    height: 23px;
+    margin-left: -20px !important;
+}

@@ -2,6 +2,8 @@ angular.module('EmployeePanda.controllers')
 .controller('ConfirmOrderController', function($scope, $stateParams, EmployeeService, DetailsService, $state) {  
     this.orderDetails = DetailsService.employeeOrder.employeeOrder.get();
     
+    console.log('Getting order Details ---> ' + JSON.stringify(this.orderDetails));
+
     // Fetch Vendor Information
      this.vendorInfo = DetailsService.vendorInfo.selectedVendor.get();
 
@@ -10,7 +12,7 @@ angular.module('EmployeePanda.controllers')
     {
     	angular.copy(this.orderDetails, this.postOrderObject);
     	delete this.postOrderObject.vendorName;
-    	delete this.postOrderObject.totalCost;
+    	// delete this.postOrderObject.totalCost;
     }
 
     this.confirmOrder = function(){

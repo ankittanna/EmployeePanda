@@ -105,6 +105,7 @@ angular.module('EmployeePanda.controllers')
 	 	this.orderDetails.ordereditems = this.itemsOrdered;
 	 	this.orderDetails.totalCost = this.orderCost;
 
+	 	console.log('------> ' + JSON.stringify(this.orderDetails));
 	 	DetailsService.employeeOrder.employeeOrder.set(this.orderDetails);
 
 	 	$state.go('app.confirmOrder');

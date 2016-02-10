@@ -20,14 +20,17 @@
 
 
 <ion-view view-title="My Orders" class="appcomponent vendormenu">
-  <ion-content>      
+  <ion-content on-swipe-left="myOrders.swipeLeft()" on-swipe-right="myOrders.swipeRight()">      
     <label class="item item-input">
         <span class="input-label">
             <h2 class="title">My Orders</h2>
         </span>
     </label>        
     <label class="item-input">       
-         <h2 class="title">Order Confirmed</h2>      
+         <h2 class="title">Order Confirmation ({{myOrders.currentIndex+1}}/{{myOrdersList.length}})</h2>      
+    </label>
+    <label class="item-input">       
+         <h2 class="title">{{myOrdersList[myOrders.currentIndex].ordertoname}}</h2>      
     </label>
     <label class="item item-input">
       <div class="row">
@@ -60,7 +63,7 @@
       </ion-item>
         <ion-item>
             <div class="row">
-                <div class="col"><b>Total Value: </b>Rs. <label ng-bind="myOrders.calculateOrderAmount(myOrdersList[myOrders.currentIndex].ordereditems)"></label></div>
+                <div class="col"><b>Total Value: </b>Rs. <label>{{myOrdersList[myOrders.currentIndex].totalCost}}</label></div>
             </div>
           </ion-item>    
     </ion-list>
