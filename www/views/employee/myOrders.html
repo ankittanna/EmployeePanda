@@ -5,15 +5,10 @@
             <h2 class="title">My Orders</h2>
         </span>
     </label>
-    <label class="item item-input">
-        <span class="input-label">
-            <h1 class="title">{{confirmOrder.orderDetails.vendorName}}</h1>
-        </span>
-    </label>
     <ion-list>
-      <ion-item ng-repeat="orderItem in myOrdersList">
+      <ion-item ng-repeat="orderItem in myOrdersList" class="listItemHeight">
         <div class="row">
-            <div class="col">{{orderItem._id}}</div>
+            <div class="col"><!--{{orderItem._id}}-->123</div>
             <div class="col">{{orderItem.orderto}}</div>
             <div class="col">{{myOrders.convertTimeFormat(orderItem.ordertime)}}</div>
             <div class="col">Rs. {{myOrders.calculateOrderAmount(orderItem.ordereditems)}}</div>
@@ -24,7 +19,6 @@
   </ion-content>
   
   <div class="bar bar-footer">               
-         <button class="button button-assertive" ng-click="confirmOrder.cancelOrder()">Cancel</button>
-         <button class="button button-balanced" ng-click="confirmOrder.confirmOrder()"> Confirm </button> 
+         <button class="button button-balanced button-full" ng-click="myOrders.backToHome()">Back to Home</button>
     </div>
 </ion-view>
