@@ -32,9 +32,10 @@
       <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr" ng-click="vendor.selectOrder(order)">
         <div class="row">
             <div class="col">{{order.orderbyname}}</div>  
-            <div class="col" ng-show="order.status=='Order in Queue'">Order in Queue</div>
-            <div class="col" ng-show="order.status=='Order in Process'">Order in Process</div>
-            <div class="col" ng-show="order.status=='Order is Ready'">Order is Ready</div>  
+            <div class="col" ng-show="order.status=='Order in Queue'"></div>
+            <div class="col" ng-show="order.status=='Order in Process'"><img src="img/inprocess.png" class="tickStyle"></div>
+            <div class="col" ng-show="order.status=='Order is Ready'"><img src="img/tick.png" class="tickStyle"></div>  
+            <div class="col" ng-show="order.status=='Order is Delivered'">Delivered</div>  
             <div class="col">Rs. {{order.total}}</div>         
         </div>        
       </ion-item>

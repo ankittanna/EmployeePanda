@@ -44,4 +44,4 @@ function employeeService($http) {
 angular.module('EmployeePanda.services')
 .factory('EmployeeService', employeeService);
 
-employeeServices.$inject = ['$http'];
+employeeService.$inject = ['$http'];

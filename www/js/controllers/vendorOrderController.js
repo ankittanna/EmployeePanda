@@ -4,7 +4,7 @@ angular.module('EmployeePanda.controllers')
      
      // Fetch Vendor Information
      this.orderInfo = DetailsService.orderInfo.selectedOrder.get('selectedOrderObject');
-     
+     $scope.orderInfo = DetailsService.orderInfo.selectedOrder.get('selectedOrderObject').status;
       $scope.userInfo = DetailsService.loginInfo.userInfo.get();
 	 
 	 // Explicit Menu List
@@ -21,10 +21,23 @@ angular.module('EmployeePanda.controllers')
           }
           else if (status === 'Order in Process'){
               orderChangeObject.status = "Order is Ready";
-          }       
+          } else if(status === 'Order is Ready')       
+          {
+            orderChangeObject.status = "Order is Delivered";
+          }
           
           VendorService.changeOrderStatus(orderChangeObject).then(function(data) {
-            $scope.vendors = data;          
+            //$scope.orderInfo = 
+            $scope.vendors = data;
+             if(status === 'Order in Queue'){
+              $scope.orderInfo = "Order in Process";
+              }
+              else if (status === 'Order in Process'){
+                  $scope.orderInfo = "Order is Ready";
+              } else if(status === 'Order is Ready')       
+              {
+                $scope.orderInfo = "Order is Delivered";
+              }         
           }).catch(function(response) {
             // TODO: Is this really required?
             // angular.element('#roomTable').css('display', 'none'); 

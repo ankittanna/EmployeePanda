@@ -238,3 +238,9 @@ div.vendoritem div.transbox{
 {
   line-height: 160px;
 }
+
+.tickStyle
+{
+  height: 30px;
+  width: 30px;
+}
