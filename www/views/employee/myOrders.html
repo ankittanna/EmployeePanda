@@ -25,18 +25,16 @@
         <span class="input-label">
             <h2 class="title">My Orders</h2>
         </span>
-    </label>
-             
+    </label>        
     <label class="item-input">       
          <h2 class="title">Order Confirmed</h2>      
     </label>
-   {{myOrders.myOrdersList}}
     <label class="item item-input">
       <div class="row">
-        <div class="col"><b>Order Id</b><br>{{myOrders.orderDetails.ordernumber}}</div>
+        <div class="col"><b>Order Id</b><br>{{myOrdersList[myOrders.currentIndex].ordernumber}}</div>
         <div class="col">
         </div>
-        <div class="col"><b>Date & Time</b><br>{{finishOrder.convertTimeFormat(finishOrder.orderDetails.ordertime)}}</div>
+        <div class="col"><b>Date & Time</b><br>{{myOrders.convertTimeFormat(myOrdersList[myOrders.currentIndex].ordertime)}}</div>
       </div>
     </label>
     <ion-list>
@@ -56,13 +54,13 @@
         </div>
         <div class="row">
             <div class="col">
-              <b>Order Status: </b>{{finishOrder.orderDetails.status}}
+              <b>Order Status: </b>{{myOrdersList[myOrders.currentIndex].status}}
             </div>
         </div>
       </ion-item>
         <ion-item>
             <div class="row">
-                <div class="col"><b>Total Value</b> Rs. {{myOrders.calculateOrderAmount(orderItem.ordereditems)}}</div>
+                <div class="col"><b>Total Value: </b>Rs. <label ng-bind="myOrders.calculateOrderAmount(myOrdersList[myOrders.currentIndex].ordereditems)"></label></div>
             </div>
           </ion-item>    
     </ion-list>

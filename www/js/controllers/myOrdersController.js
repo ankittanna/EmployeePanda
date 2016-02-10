@@ -9,8 +9,11 @@ angular.module('EmployeePanda.controllers')
     EmployeeService.getMyOrders(this.employeeInfo).then(function(data){
     	$scope.myOrdersList = data;
         this.myOrdersList = data;
+        console.log(JSON.stringify($scope.myOrdersList));
     });
     
+    this.currentIndex = 0;
+
     this.calculateOrderAmount = function(orderedItems)
     {
         var itemsCostForOrder = orderedItems.map(function(item, index, array){
@@ -23,9 +26,16 @@ angular.module('EmployeePanda.controllers')
     };
     
     this.convertTimeFormat = function(time){
-        var formattedDateTime;
-        var orderDate = new Date(time);
+        var formattedDateTime, orderDate;
+        if(time === undefined)
+        {
+            orderDate = new Date();
+        } else
+        {
+            orderDate = new Date(time);
+        }
         
+
         var hours = orderDate.getHours();
         var minutes = orderDate.getMinutes();
         var ampm = hours >= 12 ? 'PM' : 'AM';
@@ -41,4 +51,5 @@ angular.module('EmployeePanda.controllers')
     this.backToHome = function(){
         $state.go('app.vendorList');
     };
+
 });
