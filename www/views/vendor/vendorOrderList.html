@@ -29,7 +29,7 @@
 
    
     <ion-list>
-      <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr" ng-click="vendor.selectOrder(order)">
+      <ion-item ng-repeat="order in orders | filter: vendor.searchOrderStr track by $index" ng-click="vendor.selectOrder(order)">
         <div class="row">
             <div class="col">{{order.orderbyname}}</div>  
             <div class="col" ng-show="order.status=='Order in Queue'"></div>

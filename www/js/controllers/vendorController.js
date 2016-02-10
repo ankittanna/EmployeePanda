@@ -16,6 +16,18 @@ angular.module('EmployeePanda.controllers').controller('VendorCtrl', function($s
                 }
                 $scope.orders[i].total = total;
             }
+
+            $scope.orders = $scope.orders.map(function(order, index, orders){
+                    if(order.status !== 'Order is Delivered')
+                    {
+                        return order;
+                    } else
+                    {
+                        return;
+                    }
+                });
+            $scope.orders.clean(null);
+
             }).catch(function(response) {
                 console.log(JSON.stringify(response));
             });

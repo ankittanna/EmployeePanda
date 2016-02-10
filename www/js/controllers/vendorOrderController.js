@@ -1,5 +1,5 @@
 angular.module('EmployeePanda.controllers')
-.controller('VendorOrderController', function($scope, $stateParams, VendorService, DetailsService) {  
+.controller('VendorOrderController', function($scope, $stateParams, $state, VendorService, DetailsService) {  
      this.orderId = $stateParams.orderId;
      
      // Fetch Vendor Information
@@ -37,6 +37,7 @@ angular.module('EmployeePanda.controllers')
               } else if(status === 'Order is Ready')       
               {
                 $scope.orderInfo = "Order is Delivered";
+                $state.go('app.vendorOrderList');
               }         
           }).catch(function(response) {
             // TODO: Is this really required?
