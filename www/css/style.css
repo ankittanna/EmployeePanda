@@ -138,3 +138,8 @@ div.transbox {
     width: 30px;
     margin-right: 5px;
 }
+
+.qrcode canvas{
+      height: 150px;
+    width: 150px;
+}

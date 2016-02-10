@@ -19,6 +19,8 @@
     <label class="item item-input">
       <div class="row">
         <div class="col"><b>Order Id</b><br>12345</div>
+        <div class="col">
+        </div>
         <div class="col"><b>Date & Time</b><br>29/01/2016 12:35 PM</div>
       </div>
     </label>
@@ -29,40 +31,26 @@
             <div class="col"><img src="img/location.png" class="locationIcon">PDC1</div>
         </div>
         <div class="row">
+          <div id="orderInfo" class="qrcode">
+            
+          </div>
+        </div>
+        <div class="row">
             <div class="col">
               <img src="img/clock.png" class="clockIcon">ETA 20 Mins
             </div>
         </div>
       </ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item>
-        <div class="row">
-            <div class="col"><b>Total Value</b> Rs. {{finishOrder.orderDetails.totalCost}}</div>
-        </div>
-      </ion-item>
-
-      <!--<ion-item>
-        <div class="row">
-            <div class="col">
-                <button class="button button-balanced button-full" ng-click="confirmOrder.confirmOrder()">
-                  Confirm
-                </button>
+        <ion-item>
+            <div class="row">
+                <div class="col"><b>Total Value</b> Rs. {{finishOrder.orderDetails.totalCost}}</div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="button button-assertive button-full" ng-click="confirmOrder.cancelOrder()">
-                  Cancel
-                </button>
-            </div>
-        </div>
-      </ion-item>-->
+          </ion-item>    
     </ion-list>
  <!-- <div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div> -->
   </ion-content>
   
   <div class="bar bar-footer">              
-         <button class="button button-balanced button-full" ng-click="confirmOrder.cancelOrder()">Back to Home</button>
+         <button class="button button-balanced button-full" ng-click="finishOrder.backToHome()">Back to Home</button>
     </div>
 </ion-view>
