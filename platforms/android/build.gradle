@@ -96,6 +96,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "ibm-mfp-core/starter-build-extras.gradle"
+apply from: "ibm-mfp-push/starter-build-extras.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()

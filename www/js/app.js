@@ -9,27 +9,6 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-	BMSClient.initialize("http://EmpPanda.mybluemix.net","43694daf-8689-477f-b21d-9e068e18301c");
-        var success = function(message) { 
-			var deviceId = JSON.parse(message).deviceId;
-			window.localStorage['empLocStorage'] = deviceId;
-			//alert("DeiviceLocal"+window.localStorage['empLocStorage']);
-		};
-        var failure = function(message) { alert("Error: " + message); };
-        var settings = {
-            ios: {
-                alert: true,
-                badge: true,
-                sound: true
-            }   
-        }; 
-        MFPPush.registerDevice(settings, success, failure);
-        var notification = function(notif){
-            //alert (notif.message);
-        };
-		MFPPush.registerNotificationsCallback(notification);
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
