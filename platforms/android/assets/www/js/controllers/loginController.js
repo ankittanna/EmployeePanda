@@ -1,14 +1,26 @@
 angular.module('EmployeePanda.controllers', [])
-.controller('LoginCtrl', function($scope) {
-  console.log("Hello World! ************");
-  this.loginValue = 'Hi';
-  this.login = function(){
-    console.log("Hello World! ************");
-    this.loginValue = 'Hi Login';
-  };
-
-  this.signUp = function(){
-  console.log("Hello World! ************");
-    this.loginValue = 'Hi SignUp';
-  };
+.controller('LoginCtrl', function($scope, EPS, $state, $ionicPopup) {
+    $scope.data = {};
+    this.login = function() {
+         EPS.loginUser($scope.data).then(function(data) {
+            if(data[0].role === 'Employee') {
+                $state.go('app.vendorList');
+            }
+            else{
+                $state.go('app.vendorhome');
+            } 
+            
+        }).catch(function(response) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login Error!',
+                template: 'Please check your credentials!'
+            });
+        });
+    };
+    
+    this.signup = function(){
+        console.log("Does this come here!!");
+        $state.go('signup');
+    };
+  
 });

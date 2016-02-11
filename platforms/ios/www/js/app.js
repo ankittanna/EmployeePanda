@@ -30,32 +30,25 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+.state('login', {
+  url: '/login',
+  templateUrl: 'views/appComponents/login.html',
+  controller: 'LoginCtrl',
+  controllerAs: 'login'
+})
+.state('signup', {
+    url: '/signup',
+    templateUrl: 'views/appComponents/signup.html',
+    controller: 'SignupCtrl',
+    controllerAs: 'signup'
+})
+.state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'views/appComponents/menu.html'
+    templateUrl: 'views/appComponents/menu.html',
+    controller: 'AppMenuController',
+    controllerAs: 'appMenu'
   })
-  .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/appComponents/login.html',
-          controller: 'LoginCtrl',
-          controllerAs: 'login'
-        }
-      }
-    })
-
-   .state('app.signup', {
-      url: '/signup',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/appComponents/signup.html',
-          controller: 'SignupCtrl',
-          controllerAs: 'signup'
-        }
-      }
-    })
     
  .state('app.vendorList', {
     url: '/vendorlist',
@@ -64,6 +57,36 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
         templateUrl: 'views/employee/vendorlist.html',
         controller: 'VendorListController',
         controllerAs: 'vendorList'
+      }
+    }
+  })
+ .state('app.confirmOrder', {
+    url: '/confirmOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/confirmOrder.html',
+        controller: 'ConfirmOrderController',
+        controllerAs: 'confirmOrder'
+      }
+    }
+  })
+ .state('app.finishOrder', {
+    url: '/finishOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/finishOrder.html',
+        controller: 'FinishOrderController',
+        controllerAs: 'finishOrder'
+      }
+    }
+  })
+ .state('app.myOrders', {
+    url: '/myOrders',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/myOrders.html',
+        controller: 'MyOrdersController',
+        controllerAs: 'myOrders'
       }
     }
   })
@@ -87,24 +110,26 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
           controllerAs: 'vendor'
         }
       }
-    })
+    })    
     
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.vendorOrderList', {
+      url: '/vendororderlist',
       views: {
         'menuContent': {
-          templateUrl: 'views/employee/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'views/vendor/vendorOrderList.html',
+          controller: 'VendorCtrl',
+          controllerAs: 'vendor'
         }
       }
     })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+    
+    .state('app.orderedMenu', {
+    url: '/orders/:orderId',
     views: {
       'menuContent': {
-        templateUrl: 'views/employee/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'views/vendor/vendorOrder.html',
+        controller: 'VendorOrderController',
+        controllerAs: 'vendorOrder'
       }
     }
   });

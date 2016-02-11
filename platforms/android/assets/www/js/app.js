@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'EmployeePanda.services' is found in services.js
 // 'EmployeePanda.controllers' is found in controllers.js
-angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.vendorServices', 'EmployeePanda.employeeServices'])
+angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'EmployeePanda.services', 'EmployeePanda.directives', 'LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,58 +22,114 @@ angular.module('EmployeePanda', ['ionic', 'EmployeePanda.controllers', 'Employee
     }
   });
 })
-
+.constant('ratingConfig', {
+    max: 5,
+    stateOn: null,
+    stateOff: null
+})
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+.state('login', {
+  url: '/login',
+  templateUrl: 'views/appComponents/login.html',
+  controller: 'LoginCtrl',
+  controllerAs: 'login'
+})
+.state('signup', {
+    url: '/signup',
+    templateUrl: 'views/appComponents/signup.html',
+    controller: 'SignupCtrl',
+    controllerAs: 'signup'
+})
+.state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'views/appComponents/menu.html'
+    templateUrl: 'views/appComponents/menu.html',
+    controller: 'AppMenuController',
+    controllerAs: 'appMenu'
   })
-  .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/appComponents/login.html',
-          controller: 'LoginCtrl',
-          controllerAs: 'login'
-        }
-      }
-    })
-  .state('app.search', {
-    url: '/search',
+    
+ .state('app.vendorList', {
+    url: '/vendorlist',
     views: {
       'menuContent': {
-        templateUrl: 'views/employee/search.html'
+        templateUrl: 'views/employee/vendorlist.html',
+        controller: 'VendorListController',
+        controllerAs: 'vendorList'
+      }
+    }
+  })
+ .state('app.confirmOrder', {
+    url: '/confirmOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/confirmOrder.html',
+        controller: 'ConfirmOrderController',
+        controllerAs: 'confirmOrder'
+      }
+    }
+  })
+ .state('app.finishOrder', {
+    url: '/finishOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/finishOrder.html',
+        controller: 'FinishOrderController',
+        controllerAs: 'finishOrder'
+      }
+    }
+  })
+ .state('app.myOrders', {
+    url: '/myOrders',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/myOrders.html',
+        controller: 'MyOrdersController',
+        controllerAs: 'myOrders'
+      }
+    }
+  })
+  .state('app.vendorMenu', {
+    url: '/vendors/:vendorId',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/employee/vendorMenu.html',
+        controller: 'VendorMenuController',
+        controllerAs: 'vendorMenu'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.vendorhome', {
+      url: '/vendorhome',
       views: {
         'menuContent': {
-          templateUrl: 'views/employee/browse.html'
+          templateUrl: 'views/vendor/vendorHome.html',
+          controller: 'VendorCtrl',
+          controllerAs: 'vendor'
+        }
+      }
+    })    
+    
+    .state('app.vendorOrderList', {
+      url: '/vendororderlist',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/vendor/vendorOrderList.html',
+          controller: 'VendorCtrl',
+          controllerAs: 'vendor'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/employee/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+    
+    .state('app.orderedMenu', {
+    url: '/orders/:orderId',
     views: {
       'menuContent': {
-        templateUrl: 'views/employee/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'views/vendor/vendorOrder.html',
+        controller: 'VendorOrderController',
+        controllerAs: 'vendorOrder'
       }
     }
   });

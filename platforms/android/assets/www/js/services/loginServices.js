@@ -1,35 +1,41 @@
-function employeePandaServices($http) {
+function employeePandaServices($http,DetailsService) {
     'use strict';
-    var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';
+     var baseUrl = 'https://dmc-meanjs.mybluemix.net/api';       
 
-
-    function loginUser(userData) {
-        var loginUrl = '';
-        if(userData.role == 'Employee'){
-            loginUrl = baseUrl + '/loginEmployee';
-        }else {
-            loginUrl = baseUrl + '/loginVendor';
-        }
-
-        delete userData.role;
-
+    function loginUser(userData) {     
         return $http({
             method: 'POST',
-            url: loginUrl,
+            url: baseUrl + '/login',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: userData
         }).then(function(response) {
-            console.log(response.data) ;
+            console.log(response.data) ;  
+            DetailsService.loginInfo.userInfo.set(response.data[0]);             
+            return response.data;
+        });     
+        
+    }
+    
+    function signupUser(userData) {      
+        return $http({
+            method: 'POST',
+            url: baseUrl + '/employee',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            data: userData
+        }).then(function(response) {
+            console.log(response.data);          
             return response.data;
         });
-
     }
-
+        
     // Object Map of functions
     return {
-        loginUser: loginUser,
+        loginUser: loginUser,        
+        signupUser: signupUser
 
     };
 }
@@ -37,4 +43,4 @@ function employeePandaServices($http) {
 angular.module('EmployeePanda.services',[])
     .factory('EPS', employeePandaServices);
 
-employeePandaServices.$inject = ['$http'];
+employeePandaServices.$inject = ['$http','DetailsService'];

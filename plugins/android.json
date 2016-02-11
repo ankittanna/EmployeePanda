@@ -24,7 +24,14 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "ibm-mfp-push": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "ibm-mfp-core": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        }
+    }
 }
