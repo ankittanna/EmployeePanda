@@ -1,5 +1,5 @@
 angular.module('EmployeePanda.controllers')
-.controller('VendorMenuController', function($scope, $stateParams, EmployeeService, DetailsService, $state) {  
+.controller('VendorMenuController', function($scope, $stateParams, EmployeeService, DetailsService, $state, $ionicPopup) {  
      // Clearing the existing order
      DetailsService.employeeOrder.employeeOrder.remove();
 
@@ -100,6 +100,14 @@ angular.module('EmployeePanda.controllers')
 	 	});
 
 	 	this.itemsOrdered.clean(null);
+         
+         if (this.itemsOrdered.length === 0 ){
+             var alertPopup = $ionicPopup.alert({
+                title: 'Order Error',
+                template: 'Please select at least one item to proceed'
+            });
+            return;
+         }
 
 	 	this.orderDetails.vendorName = this.vendorInfo.name;
 	 	this.orderDetails.ordereditems = this.itemsOrdered;

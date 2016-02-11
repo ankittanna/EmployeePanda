@@ -7,8 +7,24 @@ angular.module('EmployeePanda.controllers')
     $scope.myOrdersList = [];
     this.myOrdersList = [];
     EmployeeService.getMyOrders(this.employeeInfo.emailid).then(function(data){
-    	$scope.myOrdersList = data;
-        this.myOrdersList = data;
+        
+         // Order is Delivered
+        var incompleteOrders = data.map(function(order, index, data){
+            if(order.status !== 'Order is Delivered')
+            {
+                return order;
+            } else 
+            {
+                return;
+            }
+        });
+
+        incompleteOrders.clean(null);
+
+
+
+    	$scope.myOrdersList = incompleteOrders;
+        this.myOrdersList = incompleteOrders;
 
         angular.element('#orderInfo').empty();
         angular.element('#orderInfo').qrcode({
